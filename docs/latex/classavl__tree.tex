@@ -1,0 +1,137 @@
+\hypertarget{classavl__tree}{}\section{avl\+\_\+tree$<$ T $>$ Class Template Reference}
+\label{classavl__tree}\index{avl\+\_\+tree$<$ T $>$@{avl\+\_\+tree$<$ T $>$}}
+
+
+{\ttfamily \#include $<$avl\+\_\+tree.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classavl__tree_a524ae6ac5d7f7c2399fb758aba84af80}{print\+In\+Order} () const
+\item 
+void \hyperlink{classavl__tree_ac17fa1e4aa2f0f4b609a7b72c34bd2f6}{print\+Pre\+Order} () const
+\item 
+void \hyperlink{classavl__tree_a5fb83061648947aeb6b540a5dee7ae13}{print\+Post\+Order} () const
+\item 
+void \hyperlink{classavl__tree_ae067ad48ed35e1df18fdda1ed83c3d79}{print\+Tree} ()
+\item 
+void \hyperlink{classavl__tree_afece250225096dba051bd467e89b3657}{insert\+Node\+With\+Key} (T key)
+\item 
+\hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$ $\ast$ \hyperlink{classavl__tree_acc15be343ae8c57859902e5e2b55c2a2}{get\+Node\+With\+Key} (T key)
+\item 
+void \hyperlink{classavl__tree_a2ed74e7f2e93edea90c5867ec127086f}{delete\+Node\+With\+Key} (T key)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class avl\+\_\+tree$<$ T $>$}
+
+An A\+VL tree class. Author\+: Daniel Gilbert 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classavl__tree_a2ed74e7f2e93edea90c5867ec127086f}\label{classavl__tree_a2ed74e7f2e93edea90c5867ec127086f}} 
+\index{avl\+\_\+tree@{avl\+\_\+tree}!delete\+Node\+With\+Key@{delete\+Node\+With\+Key}}
+\index{delete\+Node\+With\+Key@{delete\+Node\+With\+Key}!avl\+\_\+tree@{avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{delete\+Node\+With\+Key()}{deleteNodeWithKey()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl__tree}{avl\+\_\+tree}$<$ T $>$\+::delete\+Node\+With\+Key (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})}
+
+Deletes the first tree node found with key key. Does nothing if a tree node with key key does not exist. 
+\begin{DoxyParams}{Parameters}
+{\em key} & the key of the tree node to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classavl__tree_afece250225096dba051bd467e89b3657}{insert\+Node\+With\+Key()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl__tree_acc15be343ae8c57859902e5e2b55c2a2}\label{classavl__tree_acc15be343ae8c57859902e5e2b55c2a2}} 
+\index{avl\+\_\+tree@{avl\+\_\+tree}!get\+Node\+With\+Key@{get\+Node\+With\+Key}}
+\index{get\+Node\+With\+Key@{get\+Node\+With\+Key}!avl\+\_\+tree@{avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{get\+Node\+With\+Key()}{getNodeWithKey()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classtree__node}{tree\+\_\+node}$<$T$>$$\ast$ \hyperlink{classavl__tree}{avl\+\_\+tree}$<$ T $>$\+::get\+Node\+With\+Key (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calls root-\/$>$get\+Node\+With\+Key(key). Returns nullptr if the root tree node does not exist. 
+\begin{DoxyParams}{Parameters}
+{\em key} & the key to pass to root-\/$>$get\+Node\+With\+Key(key) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return value from root-\/$>$get\+Node\+With\+Key(key) or nullptr if the root tree node does not exist 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classavl__tree_afece250225096dba051bd467e89b3657}{insert\+Node\+With\+Key()} 
+
+\hyperlink{classavl__tree_a2ed74e7f2e93edea90c5867ec127086f}{delete\+Node\+With\+Key()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl__tree_afece250225096dba051bd467e89b3657}\label{classavl__tree_afece250225096dba051bd467e89b3657}} 
+\index{avl\+\_\+tree@{avl\+\_\+tree}!insert\+Node\+With\+Key@{insert\+Node\+With\+Key}}
+\index{insert\+Node\+With\+Key@{insert\+Node\+With\+Key}!avl\+\_\+tree@{avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{insert\+Node\+With\+Key()}{insertNodeWithKey()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl__tree}{avl\+\_\+tree}$<$ T $>$\+::insert\+Node\+With\+Key (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})}
+
+Inserts a tree node into the tree with key key. 
+\begin{DoxyParams}{Parameters}
+{\em key} & the key of the tree node to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classavl__tree_a2ed74e7f2e93edea90c5867ec127086f}{delete\+Node\+With\+Key()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl__tree_a524ae6ac5d7f7c2399fb758aba84af80}\label{classavl__tree_a524ae6ac5d7f7c2399fb758aba84af80}} 
+\index{avl\+\_\+tree@{avl\+\_\+tree}!print\+In\+Order@{print\+In\+Order}}
+\index{print\+In\+Order@{print\+In\+Order}!avl\+\_\+tree@{avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{print\+In\+Order()}{printInOrder()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl__tree}{avl\+\_\+tree}$<$ T $>$\+::print\+In\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prints the values of all the tree nodes in the tree in in-\/order. Does nothing if there is no tree. \begin{DoxySeeAlso}{See also}
+\hyperlink{classavl__tree_ac17fa1e4aa2f0f4b609a7b72c34bd2f6}{print\+Pre\+Order()} 
+
+\hyperlink{classavl__tree_a5fb83061648947aeb6b540a5dee7ae13}{print\+Post\+Order()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl__tree_a5fb83061648947aeb6b540a5dee7ae13}\label{classavl__tree_a5fb83061648947aeb6b540a5dee7ae13}} 
+\index{avl\+\_\+tree@{avl\+\_\+tree}!print\+Post\+Order@{print\+Post\+Order}}
+\index{print\+Post\+Order@{print\+Post\+Order}!avl\+\_\+tree@{avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{print\+Post\+Order()}{printPostOrder()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl__tree}{avl\+\_\+tree}$<$ T $>$\+::print\+Post\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prints the values of all the tree nodes in the tree in post-\/order. Does nothing if there is no tree. \begin{DoxySeeAlso}{See also}
+\hyperlink{classavl__tree_a524ae6ac5d7f7c2399fb758aba84af80}{print\+In\+Order()} 
+
+\hyperlink{classavl__tree_ac17fa1e4aa2f0f4b609a7b72c34bd2f6}{print\+Pre\+Order()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl__tree_ac17fa1e4aa2f0f4b609a7b72c34bd2f6}\label{classavl__tree_ac17fa1e4aa2f0f4b609a7b72c34bd2f6}} 
+\index{avl\+\_\+tree@{avl\+\_\+tree}!print\+Pre\+Order@{print\+Pre\+Order}}
+\index{print\+Pre\+Order@{print\+Pre\+Order}!avl\+\_\+tree@{avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{print\+Pre\+Order()}{printPreOrder()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl__tree}{avl\+\_\+tree}$<$ T $>$\+::print\+Pre\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prints the values of all the tree nodes in the tree in pre-\/order. Does nothing if there is no tree. \begin{DoxySeeAlso}{See also}
+\hyperlink{classavl__tree_a524ae6ac5d7f7c2399fb758aba84af80}{print\+In\+Order()} 
+
+\hyperlink{classavl__tree_a5fb83061648947aeb6b540a5dee7ae13}{print\+Post\+Order()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl__tree_ae067ad48ed35e1df18fdda1ed83c3d79}\label{classavl__tree_ae067ad48ed35e1df18fdda1ed83c3d79}} 
+\index{avl\+\_\+tree@{avl\+\_\+tree}!print\+Tree@{print\+Tree}}
+\index{print\+Tree@{print\+Tree}!avl\+\_\+tree@{avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{print\+Tree()}{printTree()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl__tree}{avl\+\_\+tree}$<$ T $>$\+::print\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calls root-\/$>$\hyperlink{classavl__tree_ae067ad48ed35e1df18fdda1ed83c3d79}{print\+Tree()} if root exists. \begin{DoxySeeAlso}{See also}
+\hyperlink{classavl__tree_a524ae6ac5d7f7c2399fb758aba84af80}{print\+In\+Order()} 
+
+\hyperlink{classavl__tree_ac17fa1e4aa2f0f4b609a7b72c34bd2f6}{print\+Pre\+Order()} 
+
+\hyperlink{classavl__tree_a5fb83061648947aeb6b540a5dee7ae13}{print\+Post\+Order()} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+avl\+\_\+tree.\+h\end{DoxyCompactItemize}
