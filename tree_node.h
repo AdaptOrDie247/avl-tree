@@ -19,6 +19,7 @@ class tree_node {
         unique_ptr<tree_node<T>>
             leftChild, /**< left child. */
             rightChild; /**< right child. */
+        int height; /**< height. */
     public:
         
         /**
@@ -87,6 +88,20 @@ class tree_node {
          * @see getLeftChild()
          */
         unique_ptr<tree_node<T>>& getRightChild() { return rightChild; }
+        
+        /**
+         * Sets the height.
+         * @param heightP the height
+         * @see getHeight()
+         */
+        void setHeight(int heightP) { height = heightP; }
+        
+        /**
+         * Returns the height.
+         * @return height
+         * @see setHeight()
+         */
+        int getHeight() const { return height; }
         
         /**
          * Prints the values of all the tree nodes in the tree rooted at the
