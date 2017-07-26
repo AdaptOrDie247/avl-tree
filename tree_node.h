@@ -23,10 +23,10 @@ class tree_node {
     public:
         
         /**
-         * Constructs a tree node with key keyP.
+         * Constructs a tree node with key keyP and height 0.
          * @param keyP the key
          */
-        tree_node(T keyP) : key(keyP) {}
+        tree_node(T keyP) : key(keyP), height(0) {}
         
         /**
          * Returns the key.

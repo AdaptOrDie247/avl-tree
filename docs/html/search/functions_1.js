@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['getheight',['getHeight',['../classtree__node.html#a57c8b2000ad0a13b67532b81ba73720b',1,'tree_node']]],
   ['getkey',['getKey',['../classtree__node.html#afbe2d91ad009570338290ed9eb8a7485',1,'tree_node']]],
   ['getleftchild',['getLeftChild',['../classtree__node.html#ae161b70a3780e0cb3ecd4b57acc9e2d1',1,'tree_node']]],
   ['getmaximumnode',['getMaximumNode',['../classtree__node.html#a70bdade8011a6a46b083ea680fcea52f',1,'tree_node']]],

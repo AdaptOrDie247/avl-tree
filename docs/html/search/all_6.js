@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['setleftchild',['setLeftChild',['../classtree__node.html#a3db979969a0fe8505ba65c7afabb5463',1,'tree_node']]],
-  ['setparent',['setParent',['../classtree__node.html#a1fe75baae3a5d9caa9cb886c54c291e2',1,'tree_node']]],
-  ['setrightchild',['setRightChild',['../classtree__node.html#afea4c6595dafba65b5c4e59ca3da30f3',1,'tree_node']]]
+  ['tree_5fnode',['tree_node',['../classtree__node.html',1,'tree_node&lt; T &gt;'],['../classtree__node.html#a776da4de6a1faef8b984f8b6dfe6eb6a',1,'tree_node::tree_node()']]]
 ];

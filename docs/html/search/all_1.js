@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['binary_2dsearch_2dtree',['binary-search-tree',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['deletenodewithkey',['deleteNodeWithKey',['../classavl__tree.html#a2ed74e7f2e93edea90c5867ec127086f',1,'avl_tree']]]
 ];

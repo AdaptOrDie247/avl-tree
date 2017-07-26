@@ -86,6 +86,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae161b70a3780e0cb3ecd4b57acc9e2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e584d47f2c11941fe0406836fe50159"><td class="memItemLeft" align="right" valign="top">unique_ptr&lt; <a class="el" href="classtree__node.html">tree_node</a>&lt; T &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtree__node.html#a5e584d47f2c11941fe0406836fe50159">getRightChild</a> ()</td></tr>
 <tr class="separator:a5e584d47f2c11941fe0406836fe50159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159ebd6d96c0e2111eb0ef6a36d50471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtree__node.html#a159ebd6d96c0e2111eb0ef6a36d50471">setHeight</a> (int heightP)</td></tr>
+<tr class="separator:a159ebd6d96c0e2111eb0ef6a36d50471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57c8b2000ad0a13b67532b81ba73720b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtree__node.html#a57c8b2000ad0a13b67532b81ba73720b">getHeight</a> () const</td></tr>
+<tr class="separator:a57c8b2000ad0a13b67532b81ba73720b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae87818a195621d4defc1cde67e7219ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtree__node.html#ae87818a195621d4defc1cde67e7219ee">printTreeInOrder</a> ()</td></tr>
 <tr class="separator:ae87818a195621d4defc1cde67e7219ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ca4e1521e6620bbe2418a9636a109a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtree__node.html#a2ca4e1521e6620bbe2418a9636a109a8">printTreePreOrder</a> ()</td></tr>
@@ -136,7 +140,7 @@ template&lt;class T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Constructs a tree node with key keyP. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Constructs a tree node with key keyP and height 0. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">keyP</td><td>the key </td></tr>
   </table>
@@ -146,6 +150,35 @@ template&lt;class T&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a57c8b2000ad0a13b67532b81ba73720b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57c8b2000ad0a13b67532b81ba73720b">&#9670;&nbsp;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classtree__node.html">tree_node</a>&lt; T &gt;::getHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the height. </p><dl class="section return"><dt>Returns</dt><dd>height </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classtree__node.html#a159ebd6d96c0e2111eb0ef6a36d50471">setHeight()</a> </dd></dl>
+
+</div>
+</div>
 <a id="afbe2d91ad009570338290ed9eb8a7485"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afbe2d91ad009570338290ed9eb8a7485">&#9670;&nbsp;</a></span>getKey()</h2>
 
@@ -474,6 +507,41 @@ template&lt;class T &gt; </div>
 <p>Prints the values of all the tree nodes in the tree rooted at the tree node in pre-order. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classtree__node.html#ae87818a195621d4defc1cde67e7219ee">printTreeInOrder()</a> </dd>
 <dd>
 <a class="el" href="classtree__node.html#a4bfdd2b618c15252fcfbeab46ca05861">printTreePostOrder()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a159ebd6d96c0e2111eb0ef6a36d50471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a159ebd6d96c0e2111eb0ef6a36d50471">&#9670;&nbsp;</a></span>setHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtree__node.html">tree_node</a>&lt; T &gt;::setHeight </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>heightP</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the height. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">heightP</td><td>the height </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classtree__node.html#a57c8b2000ad0a13b67532b81ba73720b">getHeight()</a> </dd></dl>
 
 </div>
 </div>
