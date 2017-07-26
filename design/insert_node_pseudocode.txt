@@ -1,3 +1,8 @@
 insert newNode
 currentNode = newNode
-while (currentNode != root && currentNode
+while (currentNode != root
+       && currentNode balance factor > -2
+       && currentNode balance factor < 2) {
+       currentNode's parent's height = currentNode's height + 1
+       currentNode = currentNode's parent
+}

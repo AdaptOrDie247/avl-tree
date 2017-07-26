@@ -13,11 +13,20 @@ using namespace std;
  * @return an int
  */
 int main() {
-    auto root = make_unique<tree_node<int>>(10);
-    root->setLeftChild(make_unique<tree_node<int>>(5));
-    root->setRightChild(make_unique<tree_node<int>>(15));
-    root->getRightChild()->setRightChild(make_unique<tree_node<int>>(20));
-    root->getRightChild()->setHeight(1);
-    cout << root->getBalanceFactor();
+    avl_tree<int> avlt;
+    avlt.insertNodeWithKey(10);
+    cout << avlt.getNodeWithKey(10)->getHeight() << endl;
+    avlt.insertNodeWithKey(5);
+    cout << avlt.getNodeWithKey(10)->getHeight() << endl;
+    avlt.insertNodeWithKey(4);
+    cout << avlt.getNodeWithKey(10)->getHeight() << endl;
+    avlt.insertNodeWithKey(1);
+    cout << avlt.getNodeWithKey(10)->getHeight() << endl;
+//    auto root = make_unique<tree_node<int>>(10);
+//    root->setLeftChild(make_unique<tree_node<int>>(5));
+//    root->setRightChild(make_unique<tree_node<int>>(15));
+//    root->getRightChild()->setRightChild(make_unique<tree_node<int>>(20));
+//    root->getRightChild()->setHeight(1);
+//    cout << root->getBalanceFactor();
     return 0;
 }

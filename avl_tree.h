@@ -69,6 +69,12 @@ class avl_tree {
         void insertNodeWithKey(T key);
         
         /**
+         * Balance the subtree rooted at subRoot.
+         * @param subRoot the root of the subtree to balance
+         */
+        void balance(tree_node<T>* subRoot);
+        
+        /**
          * Calls root->getNodeWithKey(key).
          * Returns nullptr if the root tree node does not exist.
          * @param key the key to pass to root->getNodeWithKey(key)
@@ -112,9 +118,9 @@ void avl_tree<T>::transplantSubTree
 
 template <class T>
 void avl_tree<T>::insertNodeWithKey(T key) {
-    unique_ptr<tree_node<T>> newNode = make_unique<tree_node<T>>(key);
+    auto newNode = make_unique<tree_node<T>>(key);
     tree_node<T>* parentOfNewNode = nullptr;
-    tree_node<T>* currentNode = root.get();
+    auto currentNode = root.get();
     while (currentNode) {
         parentOfNewNode = currentNode;
         if (key < currentNode->getKey()) {
@@ -124,12 +130,44 @@ void avl_tree<T>::insertNodeWithKey(T key) {
         }
     }
     newNode->setParent(parentOfNewNode);
+    currentNode = newNode.get();
     if (!parentOfNewNode) {
         root = move(newNode);
     } else if (key < parentOfNewNode->getKey()) {
         parentOfNewNode->setLeftChild(move(newNode));
     } else {
         parentOfNewNode->setRightChild(move(newNode));
+    }
+    // Update the heights
+    while (currentNode != root.get()
+           && currentNode->getBalanceFactor() >= -1
+           && currentNode->getBalanceFactor() <= 1) {
+        currentNode->getParent()->setHeight(currentNode->getHeight() + 1);
+        currentNode = currentNode->getParent();
+    }
+    balance(currentNode);
+}
+
+template <class T>
+void avl_tree<T>::balance(tree_node<T>* subRoot) {
+    if (subRoot->getBalanceFactor() < -1) {
+        // left-left heavy
+        if (subRoot->getLeftChild()->getBalanceFactor() < 0) {
+            // right rotation around root
+        // left-right heavy
+        } else {
+            // left rotation around child
+            // right rotation around root
+        }
+    } else if (subRoot->getBalanceFactor() > 1) {
+        // right-right heavy
+        if (subRoot->getRightChild()->getBalanceFactor() > 0) {
+            // left rotation around root
+        // right-left heavy
+        } else {
+            // right rotation around child
+            // left rotation around root
+        }
     }
 }
 

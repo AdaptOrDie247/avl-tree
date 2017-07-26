@@ -236,7 +236,7 @@ void tree_node<T>::printTree(int depth) {
 
 template <class T>
 tree_node<T>* tree_node<T>::getNodeWithKey(T keyP) {
-    tree_node<T>* currentNode = this;
+    auto currentNode = this;
     while (currentNode && keyP != currentNode->getKey()) {
         if (keyP < currentNode->getKey()) {
             currentNode = currentNode->getLeftChild().get();
@@ -249,7 +249,7 @@ tree_node<T>* tree_node<T>::getNodeWithKey(T keyP) {
 
 template <class T>
 tree_node<T>* tree_node<T>::getMinimumNode() {
-    tree_node<T>* currentNode = this;
+    auto currentNode = this;
     while (currentNode->getLeftChild()) {
         currentNode = currentNode->getLeftChild().get();
     }
@@ -258,7 +258,7 @@ tree_node<T>* tree_node<T>::getMinimumNode() {
 
 template <class T>
 tree_node<T>* tree_node<T>::getMaximumNode() {
-    tree_node<T>* currentNode = this;
+    auto currentNode = this;
     while (currentNode->getRightChild()) {
         currentNode = currentNode->getRightChild().get();
     }
@@ -267,11 +267,11 @@ tree_node<T>* tree_node<T>::getMaximumNode() {
 
 template <class T>
 tree_node<T>* tree_node<T>::getPredecessorNode() {
-    tree_node<T>* currentNode = this;
+    auto currentNode = this;
     if (currentNode->getLeftChild()) {
         return currentNode->getLeftChild()->getMaximumNode();
     }
-    tree_node<T>* currentNodesParent = currentNode->getParent();
+    auto currentNodesParent = currentNode->getParent();
     while (currentNodesParent && 
            currentNode == currentNodesParent->getLeftChild().get()) {
         currentNode = currentNodesParent;
@@ -282,11 +282,11 @@ tree_node<T>* tree_node<T>::getPredecessorNode() {
 
 template <class T>
 tree_node<T>* tree_node<T>::getSuccessorNode() {
-    tree_node<T>* currentNode = this;
+    auto currentNode = this;
     if (currentNode->getRightChild()) {
         return currentNode->getRightChild()->getMinimumNode();
     }
-    tree_node<T>* currentNodesParent = currentNode->getParent();
+    auto currentNodesParent = currentNode->getParent();
     while (currentNodesParent && 
            currentNode == currentNodesParent->getRightChild().get()) {
         currentNode = currentNodesParent;
