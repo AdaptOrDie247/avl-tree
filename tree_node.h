@@ -104,6 +104,12 @@ class tree_node {
         int getHeight() const { return height; }
         
         /**
+         * Returns the balance factor.
+         * @return balance factor
+         */
+        int getBalanceFactor();
+        
+        /**
          * Prints the values of all the tree nodes in the tree rooted at the
          * tree node in in-order.
          * @see printTreePreOrder()
@@ -183,6 +189,22 @@ class tree_node {
          */
         tree_node<T>* getSuccessorNode();
 };
+
+template <class T>
+int tree_node<T>::getBalanceFactor() {
+    int heightOfLeftSubtree, heightOfRightSubtree;
+    if (getLeftChild()) {
+        heightOfLeftSubtree = getLeftChild()->getHeight();
+    } else {
+        heightOfLeftSubtree = -1;
+    }
+    if (getRightChild()) {
+        heightOfRightSubtree = getRightChild()->getHeight();
+    } else {
+        heightOfRightSubtree = -1;
+    }
+    return heightOfRightSubtree - heightOfLeftSubtree;
+}
 
 template <class T>
 void tree_node<T>::printTreeInOrder() {

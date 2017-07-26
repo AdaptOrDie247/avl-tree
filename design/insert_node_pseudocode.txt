@@ -1,1 +1,3 @@
 insert newNode
+currentNode = newNode
+while (currentNode != root && currentNode

@@ -5,6 +5,7 @@
 
 #include "avl_tree.h"
 #include <iostream>
+#include "tree_node.h"
 using namespace std;
 
 /**
@@ -12,14 +13,11 @@ using namespace std;
  * @return an int
  */
 int main() {
-    avl_tree<int> avlt;
-    avlt.insertNodeWithKey(10);
-    avlt.insertNodeWithKey(5);
-    avlt.insertNodeWithKey(15);
-    avlt.insertNodeWithKey(12);
-    avlt.insertNodeWithKey(13);
-    avlt.printTree();
-    avlt.deleteNodeWithKey(10);
-    avlt.printTree();
+    auto root = make_unique<tree_node<int>>(10);
+    root->setLeftChild(make_unique<tree_node<int>>(5));
+    root->setRightChild(make_unique<tree_node<int>>(15));
+    root->getRightChild()->setRightChild(make_unique<tree_node<int>>(20));
+    root->getRightChild()->setHeight(1);
+    cout << root->getBalanceFactor();
     return 0;
 }
