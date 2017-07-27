@@ -90,16 +90,15 @@ class tree_node {
         unique_ptr<tree_node<T>>& getRightChild() { return rightChild; }
         
         /**
-         * Sets the height.
-         * @param heightP the height
+         * Sets the height based upon the heights of the children.
          * @see getHeight()
          */
-        void setHeight(int heightP) { height = heightP; }
+        void setHeightFromChildren();
         
         /**
          * Returns the height.
          * @return height
-         * @see setHeight()
+         * @see setHeightFromChildren()
          */
         int getHeight() const { return height; }
         
@@ -189,6 +188,23 @@ class tree_node {
          */
         tree_node<T>* getSuccessorNode();
 };
+
+template <class T>
+void tree_node<T>::setHeightFromChildren() {
+    if (!getLeftChild() && !getRightChild()) {
+        height = 0;
+    } else if (getLeftChild() && !getRightChild()) {
+        height = getLeftChild()->getHeight() + 1;
+    } else if (!getLeftChild() && getRightChild()) {
+        height = getRightChild()->getHeight() + 1;
+    } else {
+        if (getLeftChild()->getHeight() > getRightChild()->getHeight()) {
+            height = getLeftChild()->getHeight() + 1;
+        } else {
+            height = getRightChild()->getHeight() + 1;
+        }
+    }
+}
 
 template <class T>
 int tree_node<T>::getBalanceFactor() {

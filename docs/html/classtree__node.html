@@ -86,8 +86,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae161b70a3780e0cb3ecd4b57acc9e2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e584d47f2c11941fe0406836fe50159"><td class="memItemLeft" align="right" valign="top">unique_ptr&lt; <a class="el" href="classtree__node.html">tree_node</a>&lt; T &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtree__node.html#a5e584d47f2c11941fe0406836fe50159">getRightChild</a> ()</td></tr>
 <tr class="separator:a5e584d47f2c11941fe0406836fe50159"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a159ebd6d96c0e2111eb0ef6a36d50471"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtree__node.html#a159ebd6d96c0e2111eb0ef6a36d50471">setHeight</a> (int heightP)</td></tr>
-<tr class="separator:a159ebd6d96c0e2111eb0ef6a36d50471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83ce531535bd54bdee8fd3ee9e4c128"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtree__node.html#ab83ce531535bd54bdee8fd3ee9e4c128">setHeightFromChildren</a> ()</td></tr>
+<tr class="separator:ab83ce531535bd54bdee8fd3ee9e4c128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57c8b2000ad0a13b67532b81ba73720b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtree__node.html#a57c8b2000ad0a13b67532b81ba73720b">getHeight</a> () const</td></tr>
 <tr class="separator:a57c8b2000ad0a13b67532b81ba73720b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab69072fe36a848328440efcf5362bca1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtree__node.html#ab69072fe36a848328440efcf5362bca1">getBalanceFactor</a> ()</td></tr>
@@ -197,7 +197,7 @@ template&lt;class T&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Returns the height. </p><dl class="section return"><dt>Returns</dt><dd>height </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classtree__node.html#a159ebd6d96c0e2111eb0ef6a36d50471">setHeight()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classtree__node.html#ab83ce531535bd54bdee8fd3ee9e4c128">setHeightFromChildren()</a> </dd></dl>
 
 </div>
 </div>
@@ -532,38 +532,23 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a159ebd6d96c0e2111eb0ef6a36d50471"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a159ebd6d96c0e2111eb0ef6a36d50471">&#9670;&nbsp;</a></span>setHeight()</h2>
+<a id="ab83ce531535bd54bdee8fd3ee9e4c128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab83ce531535bd54bdee8fd3ee9e4c128">&#9670;&nbsp;</a></span>setHeightFromChildren()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classtree__node.html">tree_node</a>&lt; T &gt;::setHeight </td>
+          <td class="memname">void <a class="el" href="classtree__node.html">tree_node</a>&lt; T &gt;::setHeightFromChildren </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>heightP</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>Sets the height. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">heightP</td><td>the height </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classtree__node.html#a57c8b2000ad0a13b67532b81ba73720b">getHeight()</a> </dd></dl>
+<p>Sets the height based upon the heights of the children. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classtree__node.html#a57c8b2000ad0a13b67532b81ba73720b">getHeight()</a> </dd></dl>
 
 </div>
 </div>

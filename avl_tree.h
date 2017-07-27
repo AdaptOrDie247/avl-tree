@@ -142,7 +142,7 @@ void avl_tree<T>::insertNodeWithKey(T key) {
     while (currentNode != root.get()
            && currentNode->getBalanceFactor() >= -1
            && currentNode->getBalanceFactor() <= 1) {
-        currentNode->getParent()->setHeight(currentNode->getHeight() + 1);
+        currentNode->getParent()->setHeightFromChildren();
         currentNode = currentNode->getParent();
     }
     balance(currentNode);

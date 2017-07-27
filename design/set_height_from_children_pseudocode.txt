@@ -1,0 +1,3 @@
+if no children, height = 0
+if one child, height = height of child + 1
+if two children, height = height of tallest child + 1

@@ -23,7 +23,7 @@ unique\+\_\+ptr$<$ \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$ $>$ \& \
 \item 
 unique\+\_\+ptr$<$ \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$ $>$ \& \hyperlink{classtree__node_a5e584d47f2c11941fe0406836fe50159}{get\+Right\+Child} ()
 \item 
-void \hyperlink{classtree__node_a159ebd6d96c0e2111eb0ef6a36d50471}{set\+Height} (int heightP)
+void \hyperlink{classtree__node_ab83ce531535bd54bdee8fd3ee9e4c128}{set\+Height\+From\+Children} ()
 \item 
 int \hyperlink{classtree__node_a57c8b2000ad0a13b67532b81ba73720b}{get\+Height} () const
 \item 
@@ -92,7 +92,7 @@ Returns the height. \begin{DoxyReturn}{Returns}
 height 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classtree__node_a159ebd6d96c0e2111eb0ef6a36d50471}{set\+Height()} 
+\hyperlink{classtree__node_ab83ce531535bd54bdee8fd3ee9e4c128}{set\+Height\+From\+Children()} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classtree__node_afbe2d91ad009570338290ed9eb8a7485}\label{classtree__node_afbe2d91ad009570338290ed9eb8a7485}} 
 \index{tree\+\_\+node@{tree\+\_\+node}!get\+Key@{get\+Key}}
@@ -273,19 +273,14 @@ Prints the values of all the tree nodes in the tree rooted at the tree node in p
 
 \hyperlink{classtree__node_a4bfdd2b618c15252fcfbeab46ca05861}{print\+Tree\+Post\+Order()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classtree__node_a159ebd6d96c0e2111eb0ef6a36d50471}\label{classtree__node_a159ebd6d96c0e2111eb0ef6a36d50471}} 
-\index{tree\+\_\+node@{tree\+\_\+node}!set\+Height@{set\+Height}}
-\index{set\+Height@{set\+Height}!tree\+\_\+node@{tree\+\_\+node}}
-\subsubsection{\texorpdfstring{set\+Height()}{setHeight()}}
-{\footnotesize\ttfamily template$<$class T$>$ \\
-void \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::set\+Height (\begin{DoxyParamCaption}\item[{int}]{heightP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{classtree__node_ab83ce531535bd54bdee8fd3ee9e4c128}\label{classtree__node_ab83ce531535bd54bdee8fd3ee9e4c128}} 
+\index{tree\+\_\+node@{tree\+\_\+node}!set\+Height\+From\+Children@{set\+Height\+From\+Children}}
+\index{set\+Height\+From\+Children@{set\+Height\+From\+Children}!tree\+\_\+node@{tree\+\_\+node}}
+\subsubsection{\texorpdfstring{set\+Height\+From\+Children()}{setHeightFromChildren()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::set\+Height\+From\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Sets the height. 
-\begin{DoxyParams}{Parameters}
-{\em heightP} & the height \\
-\hline
-\end{DoxyParams}
-\begin{DoxySeeAlso}{See also}
+Sets the height based upon the heights of the children. \begin{DoxySeeAlso}{See also}
 \hyperlink{classtree__node_a57c8b2000ad0a13b67532b81ba73720b}{get\+Height()} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classtree__node_a3db979969a0fe8505ba65c7afabb5463}\label{classtree__node_a3db979969a0fe8505ba65c7afabb5463}} 
