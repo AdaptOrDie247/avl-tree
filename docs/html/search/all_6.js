@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rotateright',['rotateRight',['../classavl__tree.html#a924a12b6610a548c331e909b5a6d0855',1,'avl_tree']]]
+  ['tree_5fnode',['tree_node',['../classtree__node.html',1,'tree_node&lt; T &gt;'],['../classtree__node.html#a776da4de6a1faef8b984f8b6dfe6eb6a',1,'tree_node::tree_node()']]]
 ];

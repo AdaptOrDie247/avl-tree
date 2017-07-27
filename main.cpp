@@ -14,9 +14,18 @@ using namespace std;
  */
 int main() {
     avl_tree<int> avlt;
-    avlt.insertNodeWithKey(2);
+    avlt.insertNodeWithKey(6);
+    avlt.insertNodeWithKey(4);
+    avlt.insertNodeWithKey(9);
     avlt.insertNodeWithKey(1);
+    avlt.insertNodeWithKey(5);
+    avlt.insertNodeWithKey(8);
+    avlt.insertNodeWithKey(10);
     avlt.insertNodeWithKey(0);
+    avlt.insertNodeWithKey(3);
+    avlt.insertNodeWithKey(7);
+    avlt.insertNodeWithKey(11);
+    avlt.insertNodeWithKey(2);
     avlt.printTree();
     return 0;
 }

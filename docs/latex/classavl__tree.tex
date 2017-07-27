@@ -17,10 +17,6 @@ void \hyperlink{classavl__tree_ae067ad48ed35e1df18fdda1ed83c3d79}{print\+Tree} (
 \item 
 void \hyperlink{classavl__tree_afece250225096dba051bd467e89b3657}{insert\+Node\+With\+Key} (T key)
 \item 
-void \hyperlink{classavl__tree_a97854f2ab9e9e89b0dfc2e262a4bca0f}{balance} (\hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$ $\ast$sub\+Root)
-\item 
-void \hyperlink{classavl__tree_a924a12b6610a548c331e909b5a6d0855}{rotate\+Right} (\hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$ $\ast$pivot)
-\item 
 \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$ $\ast$ \hyperlink{classavl__tree_acc15be343ae8c57859902e5e2b55c2a2}{get\+Node\+With\+Key} (T key)
 \item 
 void \hyperlink{classavl__tree_a2ed74e7f2e93edea90c5867ec127086f}{delete\+Node\+With\+Key} (T key)
@@ -34,18 +30,6 @@ class avl\+\_\+tree$<$ T $>$}
 An A\+VL tree class. Author\+: Daniel Gilbert 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classavl__tree_a97854f2ab9e9e89b0dfc2e262a4bca0f}\label{classavl__tree_a97854f2ab9e9e89b0dfc2e262a4bca0f}} 
-\index{avl\+\_\+tree@{avl\+\_\+tree}!balance@{balance}}
-\index{balance@{balance}!avl\+\_\+tree@{avl\+\_\+tree}}
-\subsubsection{\texorpdfstring{balance()}{balance()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-void \hyperlink{classavl__tree}{avl\+\_\+tree}$<$ T $>$\+::balance (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$ $\ast$}]{sub\+Root }\end{DoxyParamCaption})}
-
-Balance the subtree rooted at sub\+Root. 
-\begin{DoxyParams}{Parameters}
-{\em sub\+Root} & the root of the subtree to balance \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classavl__tree_a2ed74e7f2e93edea90c5867ec127086f}\label{classavl__tree_a2ed74e7f2e93edea90c5867ec127086f}} 
 \index{avl\+\_\+tree@{avl\+\_\+tree}!delete\+Node\+With\+Key@{delete\+Node\+With\+Key}}
 \index{delete\+Node\+With\+Key@{delete\+Node\+With\+Key}!avl\+\_\+tree@{avl\+\_\+tree}}
@@ -146,18 +130,6 @@ Calls root-\/$>$\hyperlink{classavl__tree_ae067ad48ed35e1df18fdda1ed83c3d79}{pri
 
 \hyperlink{classavl__tree_a5fb83061648947aeb6b540a5dee7ae13}{print\+Post\+Order()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classavl__tree_a924a12b6610a548c331e909b5a6d0855}\label{classavl__tree_a924a12b6610a548c331e909b5a6d0855}} 
-\index{avl\+\_\+tree@{avl\+\_\+tree}!rotate\+Right@{rotate\+Right}}
-\index{rotate\+Right@{rotate\+Right}!avl\+\_\+tree@{avl\+\_\+tree}}
-\subsubsection{\texorpdfstring{rotate\+Right()}{rotateRight()}}
-{\footnotesize\ttfamily template$<$class T $>$ \\
-void \hyperlink{classavl__tree}{avl\+\_\+tree}$<$ T $>$\+::rotate\+Right (\begin{DoxyParamCaption}\item[{\hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$ $\ast$}]{pivot }\end{DoxyParamCaption})}
-
-Perform a right rotation around pivot. 
-\begin{DoxyParams}{Parameters}
-{\em pivot} & the pivot \\
-\hline
-\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
