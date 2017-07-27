@@ -75,6 +75,12 @@ class avl_tree {
         void balance(tree_node<T>* subRoot);
         
         /**
+         * Perform a right rotation around pivot.
+         * @param pivot the pivot
+         */
+        void rotateRight(tree_node<T>* pivot);
+        
+        /**
          * Calls root->getNodeWithKey(key).
          * Returns nullptr if the root tree node does not exist.
          * @param key the key to pass to root->getNodeWithKey(key)
@@ -154,6 +160,7 @@ void avl_tree<T>::balance(tree_node<T>* subRoot) {
         // left-left heavy
         if (subRoot->getLeftChild()->getBalanceFactor() < 0) {
             // right rotation around root
+            rotateRight(subRoot);
         // left-right heavy
         } else {
             // left rotation around child
@@ -168,6 +175,37 @@ void avl_tree<T>::balance(tree_node<T>* subRoot) {
             // right rotation around child
             // left rotation around root
         }
+    }
+}
+
+template <class T>
+void avl_tree<T>::rotateRight(tree_node<T>* pivot) {
+    auto temp = move(pivot->getLeftChild());
+    pivot->setLeftChild(move(temp->getRightChild()));
+    if (pivot->getLeftChild()) pivot->getLeftChild()->setParent(pivot);
+    pivot->setHeightFromChildren();
+    auto parentOfPivot = pivot->getParent();
+    // if the pivot is the root
+    if (!parentOfPivot) {
+        temp->setRightChild(move(root));
+        temp->getRightChild()->setParent(temp.get());
+        temp->setHeightFromChildren();
+        root = move(temp);
+        root->setParent(nullptr);
+    // if the pivot is the left child of its parent
+    } else if (parentOfPivot->getLeftChild().get() == pivot) {
+        temp->setRightChild(move(parentOfPivot->getLeftChild()));
+        temp->getRightChild()->setParent(temp.get());
+        temp->setHeightFromChildren();
+        parentOfPivot->setLeftChild(move(temp));
+        parentOfPivot->getLeftChild()->setParent(parentOfPivot);
+    // if the pivot is the right child of its parent
+    } else {
+        temp->setRightChild(move(parentOfPivot->getRightChild()));
+        temp->getRightChild()->setParent(temp.get());
+        temp->setHeightFromChildren();
+        parentOfPivot->setRightChild(move(temp));
+        parentOfPivot->getRightChild()->setParent(parentOfPivot);
     }
 }
 
