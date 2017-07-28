@@ -182,7 +182,7 @@ void avl_tree<T>::balance(tree_node<T>* subRoot) {
         // right-left heavy
         } else {
             // right rotation around child
-            rotateRight(subRoot->getRightChild());
+            rotateRight(subRoot->getRightChild().get());
             // left rotation around root
             rotateLeft(subRoot);
         }
