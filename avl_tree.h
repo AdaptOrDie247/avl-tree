@@ -280,10 +280,13 @@ void avl_tree<T>::deleteNodeWithKey(T key) {
     // If node has both children
     } else {
         auto nodesSuccessor = node->getRightChild()->getMinimumNode();
+        auto nodesSuccessorsParent = nodesSuccessor->getParent();
         auto nodesSuccessorAsReplacementUP =
             make_unique<tree_node<T>>(nodesSuccessor->getKey());
         auto nodesSuccessorAsReplacement = nodesSuccessorAsReplacementUP.get();
+        bool nodesSuccessorIsRightChild = true;
         if (nodesSuccessor->getParent() != node) {
+            nodesSuccessorIsRightChild = false;
             transplantSubTree(nodesSuccessor, nodesSuccessor->getRightChild());
             nodesSuccessorAsReplacement->
                 setRightChild(move(node->getRightChild()));
@@ -295,6 +298,21 @@ void avl_tree<T>::deleteNodeWithKey(T key) {
         nodesSuccessorAsReplacement->setLeftChild(move(nodesLeftChildUP));
         nodesSuccessorAsReplacement->getLeftChild()->
             setParent(nodesSuccessorAsReplacement);
+        tree_node<T>* currentNode;
+        if (nodesSuccessorIsRightChild) {
+            currentNode = nodesSuccessorAsReplacement;
+        } else {
+            currentNode = nodesSuccessorsParent;
+        }
+        // Update the heights and balance up to the root
+        while (currentNode) {
+            currentNode->setHeightFromChildren();
+            if (currentNode->getBalanceFactor() < -1 ||
+                currentNode->getBalanceFactor() > 1) {
+                balance(currentNode);
+            }
+            currentNode = currentNode->getParent();
+        }
     }
 }
 
