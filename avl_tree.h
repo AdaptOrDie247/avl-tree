@@ -280,9 +280,13 @@ void avl_tree<T>::deleteNodeWithKey(T key) {
     // If node has both children
     } else {
         auto nodesSuccessor = node->getRightChild()->getMinimumNode();
+        // Get nodesSuccessorsParent raw pointer before nodesSuccessor is
+        // replaced by its right child being transplanted
         auto nodesSuccessorsParent = nodesSuccessor->getParent();
         auto nodesSuccessorAsReplacementUP =
             make_unique<tree_node<T>>(nodesSuccessor->getKey());
+        // Get nodesSuccessorAsReplacement raw pointer before
+        // nodesSuccessorAsReplacementUP is moved with transplant
         auto nodesSuccessorAsReplacement = nodesSuccessorAsReplacementUP.get();
         bool nodesSuccessorIsRightChild = true;
         if (nodesSuccessor->getParent() != node) {

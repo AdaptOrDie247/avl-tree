@@ -44,7 +44,7 @@ class tree_node {
         /**
          * Returns the parent.
          * Returns nullptr if there is no parent.
-         * @return the parent or nullptr if there is no parent.
+         * @return the parent or nullptr if there is no parent
          * @see setParent()
          */
         tree_node<T>* getParent() const { return parent; }
@@ -234,14 +234,14 @@ void tree_node<T>::printTreeInOrder() {
 template <class T>
 void tree_node<T>::printTreePreOrder() {
     cout << getKey() << " ";
-    if (getLeftChild()) getLeftChild()->printTreeInOrder();
-    if (getRightChild()) getRightChild()->printTreeInOrder();
+    if (getLeftChild()) getLeftChild()->printTreePreOrder();
+    if (getRightChild()) getRightChild()->printTreePreOrder();
 }
 
 template <class T>
 void tree_node<T>::printTreePostOrder() {
-    if (getLeftChild()) getLeftChild()->printTreeInOrder();
-    if (getRightChild()) getRightChild()->printTreeInOrder();
+    if (getLeftChild()) getLeftChild()->printTreePostOrder();
+    if (getRightChild()) getRightChild()->printTreePostOrder();
     cout << getKey() << " ";
 }
 
