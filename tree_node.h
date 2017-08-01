@@ -293,7 +293,7 @@ tree_node<T>* tree_node<T>::getPredecessorNode() {
     while (currentNodesParent && 
            currentNode == currentNodesParent->getLeftChild().get()) {
         currentNode = currentNodesParent;
-        currentNodesParent = currentNodesParent->getParent();
+        currentNodesParent = currentNode->getParent();
     }
     return currentNodesParent;
 }
@@ -308,7 +308,7 @@ tree_node<T>* tree_node<T>::getSuccessorNode() {
     while (currentNodesParent && 
            currentNode == currentNodesParent->getRightChild().get()) {
         currentNode = currentNodesParent;
-        currentNodesParent = currentNodesParent->getParent();
+        currentNodesParent = currentNode->getParent();
     }
     return currentNodesParent;
 }

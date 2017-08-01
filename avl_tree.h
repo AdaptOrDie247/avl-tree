@@ -75,9 +75,7 @@ class avl_tree {
          * @see printPreOrder()
          * @see printPostOrder()
          */
-        void printTree() {
-            if (root) root->printTree();
-        }
+        void printTree() { if (root) root->printTree(); }
         
         /**
          * Inserts a tree node into the tree with key key.
@@ -117,7 +115,7 @@ void avl_tree<T>::transplantSubTree
     (tree_node<T>* rootToReplace, unique_ptr<tree_node<T>>& newRootUPR) {
     auto newRoot = newRootUPR.get();
     auto parentOfRootToReplace = rootToReplace->getParent();
-    if (!rootToReplace->getParent()) {
+    if (!parentOfRootToReplace) {
         root = move(newRootUPR);
     } else if (rootToReplace ==
                parentOfRootToReplace->getLeftChild().get()) {
@@ -142,6 +140,7 @@ void avl_tree<T>::insertNodeWithKey(T key) {
         }
     }
     newNode->setParent(parentOfNewNode);
+    // Get newNode raw pointer before newNode is moved
     currentNode = newNode.get();
     if (!parentOfNewNode) {
         root = move(newNode);
@@ -258,10 +257,11 @@ template <class T>
 void avl_tree<T>::deleteNodeWithKey(T key) {
     auto node = getNodeWithKey(key);
     if (!node) return;
+    // Get raw pointer to node's parent before node is replaced in transplant
     auto nodesParent = node->getParent();
     // If node has one child or no children
     if (!node->getLeftChild() || !node->getRightChild()) {
-        // If node has no left child
+        // If node has no left child and possibly no right child
         if (!node->getLeftChild()) {
             transplantSubTree(node, node->getRightChild());
         // If node has a left child but no right child
@@ -279,7 +279,7 @@ void avl_tree<T>::deleteNodeWithKey(T key) {
         }
     // If node has both children
     } else {
-        auto nodesSuccessor = node->getRightChild()->getMinimumNode();
+        auto nodesSuccessor = node->getSuccessorNode();
         // Get nodesSuccessorsParent raw pointer before nodesSuccessor is
         // replaced by its right child being transplanted
         auto nodesSuccessorsParent = nodesSuccessor->getParent();
