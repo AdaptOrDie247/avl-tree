@@ -151,39 +151,42 @@ void avl_tree<T>::insertNodeWithKey(T key) {
         parentOfNewNode->setRightChild(move(newNode));
     }
     // Update the heights
-    while (currentNode != root.get()
-           && currentNode->getBalanceFactor() >= -1
-           && currentNode->getBalanceFactor() <= 1) {
-        currentNode->getParent()->setHeightFromChildren();
+    while (currentNode != root.get()) {
         currentNode = currentNode->getParent();
+        currentNode->setHeightFromChildren();
+        if (currentNode->getBalanceFactor() < -1 ||
+            currentNode->getBalanceFactor() > 1) {
+            balance(currentNode);
+        }
     }
-    balance(currentNode);
 }
 
 template <class T>
 void avl_tree<T>::balance(tree_node<T>* subRoot) {
+    // left-heavy
     if (subRoot->getBalanceFactor() < -1) {
-        // left-left heavy
-        if (subRoot->getLeftChild()->getBalanceFactor() < 0) {
-            // right rotation around root
-            rotateRight(subRoot);
         // left-right heavy
-        } else {
+        if (subRoot->getLeftChild()->getBalanceFactor() > 0) {
             // left rotation around child
             rotateLeft(subRoot->getLeftChild().get());
-            // right rotation around root
+            // right rotation around subroot
+            rotateRight(subRoot);
+        // left-heavy or left-left-heavy
+        } else {
+            // right rotation around subroot
             rotateRight(subRoot);
         }
+    // right-heavy
     } else if (subRoot->getBalanceFactor() > 1) {
-        // right-right heavy
-        if (subRoot->getRightChild()->getBalanceFactor() > 0) {
-            // left rotation around root
-            rotateLeft(subRoot);
         // right-left heavy
-        } else {
+        if (subRoot->getRightChild()->getBalanceFactor() < 0) {
             // right rotation around child
             rotateRight(subRoot->getRightChild().get());
-            // left rotation around root
+            // left rotation around subroot
+            rotateLeft(subRoot);
+        // right-heavy or right-right-heavy
+        } else {
+            // left rotation around subroot
             rotateLeft(subRoot);
         }
     }

@@ -56,8 +56,9 @@ class tree_node {
          * @see getRightChild()
          * @see setRightChild()
          */
-        void setLeftChild(unique_ptr<tree_node<T>> leftChildP)
-            { leftChild = move(leftChildP); }
+        void setLeftChild(unique_ptr<tree_node<T>> leftChildP) {
+            leftChild = move(leftChildP);
+        }
         
         /**
          * Sets the right child.
@@ -66,8 +67,9 @@ class tree_node {
          * @see getLeftChild()
          * @see setLeftChild()
          */
-        void setRightChild(unique_ptr<tree_node<T>> rightChildP)
-            { rightChild = move(rightChildP); }
+        void setRightChild(unique_ptr<tree_node<T>> rightChildP) {
+            rightChild = move(rightChildP);
+        }
         
         /**
          * Returns the left child.
