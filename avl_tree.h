@@ -150,14 +150,14 @@ void avl_tree<T>::insertNodeWithKey(T key) {
     } else {
         parentOfNewNode->setRightChild(move(newNode));
     }
-    // Update the heights
-    while (currentNode != root.get()) {
-        currentNode = currentNode->getParent();
+    // Update the heights and balance up to the root
+    while (currentNode) {
         currentNode->setHeightFromChildren();
         if (currentNode->getBalanceFactor() < -1 ||
             currentNode->getBalanceFactor() > 1) {
             balance(currentNode);
         }
+        currentNode = currentNode->getParent();
     }
 }
 
@@ -258,10 +258,26 @@ template <class T>
 void avl_tree<T>::deleteNodeWithKey(T key) {
     auto node = getNodeWithKey(key);
     if (!node) return;
-    if (!node->getLeftChild()) {
-        transplantSubTree(node, node->getRightChild());
-    } else if (!node->getRightChild()) {
-        transplantSubTree(node, node->getLeftChild());
+    auto nodesParent = node->getParent();
+    // If node has one child or no children
+    if (!node->getLeftChild() || !node->getRightChild()) {
+        // If node has no left child
+        if (!node->getLeftChild()) {
+            transplantSubTree(node, node->getRightChild());
+        // If node has a left child but no right child
+        } else if (!node->getRightChild()) {
+            transplantSubTree(node, node->getLeftChild());
+        }
+        // Update the heights and balance up to the root
+        while (nodesParent) {
+            nodesParent->setHeightFromChildren();
+            if (nodesParent->getBalanceFactor() < -1 ||
+                nodesParent->getBalanceFactor() > 1) {
+                balance(nodesParent);
+            }
+            nodesParent = nodesParent->getParent();
+        }
+    // If node has both children
     } else {
         auto nodesSuccessor = node->getRightChild()->getMinimumNode();
         auto nodesSuccessorAsReplacementUP =
