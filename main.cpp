@@ -3,9 +3,9 @@
  * Author: Daniel Gilbert
  */
 
-#include "avl_tree.h"
+#include "include/avl_tree.h"
 #include <iostream>
-#include "tree_node.h"
+#include "include/tree_node.h"
 using namespace std;
 
 /**
