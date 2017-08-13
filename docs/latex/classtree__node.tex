@@ -29,13 +29,13 @@ int \hyperlink{classtree__node_a57c8b2000ad0a13b67532b81ba73720b}{get\+Height} (
 \item 
 int \hyperlink{classtree__node_ab69072fe36a848328440efcf5362bca1}{get\+Balance\+Factor} ()
 \item 
-void \hyperlink{classtree__node_ae87818a195621d4defc1cde67e7219ee}{print\+Tree\+In\+Order} ()
+void \hyperlink{classtree__node_a06d05cc3d2201be12bbeea10190a923f}{print\+Tree\+In\+Order} (ostream \&output)
 \item 
-void \hyperlink{classtree__node_a2ca4e1521e6620bbe2418a9636a109a8}{print\+Tree\+Pre\+Order} ()
+void \hyperlink{classtree__node_af6b781b7c54d6ffa8fc3d8ddb15a184d}{print\+Tree\+Pre\+Order} (ostream \&output)
 \item 
-void \hyperlink{classtree__node_a4bfdd2b618c15252fcfbeab46ca05861}{print\+Tree\+Post\+Order} ()
+void \hyperlink{classtree__node_a7a30637fff22c441f95e9e1b7cb34649}{print\+Tree\+Post\+Order} (ostream \&output)
 \item 
-void \hyperlink{classtree__node_a3a16e4e452fb27976139e59624d11846}{print\+Tree} (int depth=0)
+void \hyperlink{classtree__node_a241608f3e979085651ccc8e77c816b58}{print\+Tree} (ostream \&output, int depth=0)
 \item 
 \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$ $\ast$ \hyperlink{classtree__node_a7216e66159b013b47e259555416ec72f}{get\+Node\+With\+Key} (T keyP)
 \item 
@@ -170,7 +170,7 @@ the first tree node found with key keyP, or nullptr if such a tree node does not
 \hyperlink{classtree__node}{tree\+\_\+node}$<$T$>$$\ast$ \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Returns the parent. Returns nullptr if there is no parent. \begin{DoxyReturn}{Returns}
-the parent or nullptr if there is no parent. 
+the parent or nullptr if there is no parent 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 \hyperlink{classtree__node_a1fe75baae3a5d9caa9cb886c54c291e2}{set\+Parent()} 
@@ -218,60 +218,77 @@ the in-\/order successor tree node, or nullptr if it does not exist
 \begin{DoxySeeAlso}{See also}
 \hyperlink{classtree__node_a5cce6c37b00a6d899e371c334559310e}{get\+Predecessor\+Node()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classtree__node_a3a16e4e452fb27976139e59624d11846}\label{classtree__node_a3a16e4e452fb27976139e59624d11846}} 
+\mbox{\Hypertarget{classtree__node_a241608f3e979085651ccc8e77c816b58}\label{classtree__node_a241608f3e979085651ccc8e77c816b58}} 
 \index{tree\+\_\+node@{tree\+\_\+node}!print\+Tree@{print\+Tree}}
 \index{print\+Tree@{print\+Tree}!tree\+\_\+node@{tree\+\_\+node}}
 \subsubsection{\texorpdfstring{print\+Tree()}{printTree()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::print\+Tree (\begin{DoxyParamCaption}\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})}
+void \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::print\+Tree (\begin{DoxyParamCaption}\item[{ostream \&}]{output,  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})}
 
 Prints a visual representation of the tree. 
 \begin{DoxyParams}{Parameters}
+{\em output} & output stream \\
+\hline
 {\em depth} & the depth of the tree node which defaults to 0 \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classtree__node_ae87818a195621d4defc1cde67e7219ee}{print\+Tree\+In\+Order()} 
+\hyperlink{classtree__node_a06d05cc3d2201be12bbeea10190a923f}{print\+Tree\+In\+Order()} 
 
-\hyperlink{classtree__node_a2ca4e1521e6620bbe2418a9636a109a8}{print\+Tree\+Pre\+Order()} 
+\hyperlink{classtree__node_af6b781b7c54d6ffa8fc3d8ddb15a184d}{print\+Tree\+Pre\+Order()} 
 
-\hyperlink{classtree__node_a4bfdd2b618c15252fcfbeab46ca05861}{print\+Tree\+Post\+Order()} 
+\hyperlink{classtree__node_a7a30637fff22c441f95e9e1b7cb34649}{print\+Tree\+Post\+Order()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classtree__node_ae87818a195621d4defc1cde67e7219ee}\label{classtree__node_ae87818a195621d4defc1cde67e7219ee}} 
+\mbox{\Hypertarget{classtree__node_a06d05cc3d2201be12bbeea10190a923f}\label{classtree__node_a06d05cc3d2201be12bbeea10190a923f}} 
 \index{tree\+\_\+node@{tree\+\_\+node}!print\+Tree\+In\+Order@{print\+Tree\+In\+Order}}
 \index{print\+Tree\+In\+Order@{print\+Tree\+In\+Order}!tree\+\_\+node@{tree\+\_\+node}}
 \subsubsection{\texorpdfstring{print\+Tree\+In\+Order()}{printTreeInOrder()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::print\+Tree\+In\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+void \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::print\+Tree\+In\+Order (\begin{DoxyParamCaption}\item[{ostream \&}]{output }\end{DoxyParamCaption})}
 
-Prints the values of all the tree nodes in the tree rooted at the tree node in in-\/order. \begin{DoxySeeAlso}{See also}
-\hyperlink{classtree__node_a2ca4e1521e6620bbe2418a9636a109a8}{print\+Tree\+Pre\+Order()} 
+Prints the values of all the tree nodes in the tree rooted at the tree node in in-\/order. 
+\begin{DoxyParams}{Parameters}
+{\em output} & output stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classtree__node_af6b781b7c54d6ffa8fc3d8ddb15a184d}{print\+Tree\+Pre\+Order()} 
 
-\hyperlink{classtree__node_a4bfdd2b618c15252fcfbeab46ca05861}{print\+Tree\+Post\+Order()} 
+\hyperlink{classtree__node_a7a30637fff22c441f95e9e1b7cb34649}{print\+Tree\+Post\+Order()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classtree__node_a4bfdd2b618c15252fcfbeab46ca05861}\label{classtree__node_a4bfdd2b618c15252fcfbeab46ca05861}} 
+\mbox{\Hypertarget{classtree__node_a7a30637fff22c441f95e9e1b7cb34649}\label{classtree__node_a7a30637fff22c441f95e9e1b7cb34649}} 
 \index{tree\+\_\+node@{tree\+\_\+node}!print\+Tree\+Post\+Order@{print\+Tree\+Post\+Order}}
 \index{print\+Tree\+Post\+Order@{print\+Tree\+Post\+Order}!tree\+\_\+node@{tree\+\_\+node}}
 \subsubsection{\texorpdfstring{print\+Tree\+Post\+Order()}{printTreePostOrder()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::print\+Tree\+Post\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+void \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::print\+Tree\+Post\+Order (\begin{DoxyParamCaption}\item[{ostream \&}]{output }\end{DoxyParamCaption})}
 
-Prints the values of all the tree nodes in the tree rooted at the tree node in post-\/order. \begin{DoxySeeAlso}{See also}
-\hyperlink{classtree__node_ae87818a195621d4defc1cde67e7219ee}{print\+Tree\+In\+Order()} 
+Prints the values of all the tree nodes in the tree rooted at the tree node in post-\/order. 
+\begin{DoxyParams}{Parameters}
+{\em output} & output stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classtree__node_a06d05cc3d2201be12bbeea10190a923f}{print\+Tree\+In\+Order()} 
 
-\hyperlink{classtree__node_a2ca4e1521e6620bbe2418a9636a109a8}{print\+Tree\+Pre\+Order()} 
+\hyperlink{classtree__node_af6b781b7c54d6ffa8fc3d8ddb15a184d}{print\+Tree\+Pre\+Order()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classtree__node_a2ca4e1521e6620bbe2418a9636a109a8}\label{classtree__node_a2ca4e1521e6620bbe2418a9636a109a8}} 
+\mbox{\Hypertarget{classtree__node_af6b781b7c54d6ffa8fc3d8ddb15a184d}\label{classtree__node_af6b781b7c54d6ffa8fc3d8ddb15a184d}} 
 \index{tree\+\_\+node@{tree\+\_\+node}!print\+Tree\+Pre\+Order@{print\+Tree\+Pre\+Order}}
 \index{print\+Tree\+Pre\+Order@{print\+Tree\+Pre\+Order}!tree\+\_\+node@{tree\+\_\+node}}
 \subsubsection{\texorpdfstring{print\+Tree\+Pre\+Order()}{printTreePreOrder()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::print\+Tree\+Pre\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+void \hyperlink{classtree__node}{tree\+\_\+node}$<$ T $>$\+::print\+Tree\+Pre\+Order (\begin{DoxyParamCaption}\item[{ostream \&}]{output }\end{DoxyParamCaption})}
 
-Prints the values of all the tree nodes in the tree rooted at the tree node in pre-\/order. \begin{DoxySeeAlso}{See also}
-\hyperlink{classtree__node_ae87818a195621d4defc1cde67e7219ee}{print\+Tree\+In\+Order()} 
+Prints the values of all the tree nodes in the tree rooted at the tree node in pre-\/order. 
+\begin{DoxyParams}{Parameters}
+{\em output} & output stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classtree__node_a06d05cc3d2201be12bbeea10190a923f}{print\+Tree\+In\+Order()} 
 
-\hyperlink{classtree__node_a4bfdd2b618c15252fcfbeab46ca05861}{print\+Tree\+Post\+Order()} 
+\hyperlink{classtree__node_a7a30637fff22c441f95e9e1b7cb34649}{print\+Tree\+Post\+Order()} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classtree__node_ab83ce531535bd54bdee8fd3ee9e4c128}\label{classtree__node_ab83ce531535bd54bdee8fd3ee9e4c128}} 
 \index{tree\+\_\+node@{tree\+\_\+node}!set\+Height\+From\+Children@{set\+Height\+From\+Children}}
@@ -340,4 +357,4 @@ Sets the right child.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-tree\+\_\+node.\+h\end{DoxyCompactItemize}
+include/tree\+\_\+node.\+h\end{DoxyCompactItemize}

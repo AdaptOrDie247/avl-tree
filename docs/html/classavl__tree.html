@@ -70,14 +70,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a524ae6ac5d7f7c2399fb758aba84af80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classavl__tree.html#a524ae6ac5d7f7c2399fb758aba84af80">printInOrder</a> () const</td></tr>
-<tr class="separator:a524ae6ac5d7f7c2399fb758aba84af80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac17fa1e4aa2f0f4b609a7b72c34bd2f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classavl__tree.html#ac17fa1e4aa2f0f4b609a7b72c34bd2f6">printPreOrder</a> () const</td></tr>
-<tr class="separator:ac17fa1e4aa2f0f4b609a7b72c34bd2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fb83061648947aeb6b540a5dee7ae13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classavl__tree.html#a5fb83061648947aeb6b540a5dee7ae13">printPostOrder</a> () const</td></tr>
-<tr class="separator:a5fb83061648947aeb6b540a5dee7ae13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae067ad48ed35e1df18fdda1ed83c3d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classavl__tree.html#ae067ad48ed35e1df18fdda1ed83c3d79">printTree</a> ()</td></tr>
-<tr class="separator:ae067ad48ed35e1df18fdda1ed83c3d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f553c3883b66f7758a71697bae5118"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classavl__tree.html#ac7f553c3883b66f7758a71697bae5118">printInOrder</a> (ostream &amp;output) const</td></tr>
+<tr class="separator:ac7f553c3883b66f7758a71697bae5118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a789673966eca817f4efbf6bf17644c80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classavl__tree.html#a789673966eca817f4efbf6bf17644c80">printPreOrder</a> (ostream &amp;output) const</td></tr>
+<tr class="separator:a789673966eca817f4efbf6bf17644c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a982fc15291d6a645964a9e7743383004"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classavl__tree.html#a982fc15291d6a645964a9e7743383004">printPostOrder</a> (ostream &amp;output) const</td></tr>
+<tr class="separator:a982fc15291d6a645964a9e7743383004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc1c7577f8239f7b5ac939b6291fadd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classavl__tree.html#aedc1c7577f8239f7b5ac939b6291fadd">printTree</a> (ostream &amp;output)</td></tr>
+<tr class="separator:aedc1c7577f8239f7b5ac939b6291fadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afece250225096dba051bd467e89b3657"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classavl__tree.html#afece250225096dba051bd467e89b3657">insertNodeWithKey</a> (T key)</td></tr>
 <tr class="separator:afece250225096dba051bd467e89b3657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc15be343ae8c57859902e5e2b55c2a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtree__node.html">tree_node</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classavl__tree.html#acc15be343ae8c57859902e5e2b55c2a2">getNodeWithKey</a> (T key)</td></tr>
@@ -183,8 +183,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a524ae6ac5d7f7c2399fb758aba84af80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a524ae6ac5d7f7c2399fb758aba84af80">&#9670;&nbsp;</a></span>printInOrder()</h2>
+<a id="ac7f553c3883b66f7758a71697bae5118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f553c3883b66f7758a71697bae5118">&#9670;&nbsp;</a></span>printInOrder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,7 +197,8 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classavl__tree.html">avl_tree</a>&lt; T &gt;::printInOrder </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -207,14 +208,20 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Prints the values of all the tree nodes in the tree in in-order. Does nothing if there is no tree. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classavl__tree.html#ac17fa1e4aa2f0f4b609a7b72c34bd2f6">printPreOrder()</a> </dd>
+<p>Prints the values of all the tree nodes in the tree in in-order. Does nothing if there is no tree. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>output stream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classavl__tree.html#a789673966eca817f4efbf6bf17644c80">printPreOrder()</a> </dd>
 <dd>
-<a class="el" href="classavl__tree.html#a5fb83061648947aeb6b540a5dee7ae13">printPostOrder()</a> </dd></dl>
+<a class="el" href="classavl__tree.html#a982fc15291d6a645964a9e7743383004">printPostOrder()</a> </dd></dl>
 
 </div>
 </div>
-<a id="a5fb83061648947aeb6b540a5dee7ae13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fb83061648947aeb6b540a5dee7ae13">&#9670;&nbsp;</a></span>printPostOrder()</h2>
+<a id="a982fc15291d6a645964a9e7743383004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a982fc15291d6a645964a9e7743383004">&#9670;&nbsp;</a></span>printPostOrder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -227,7 +234,8 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classavl__tree.html">avl_tree</a>&lt; T &gt;::printPostOrder </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -237,14 +245,20 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Prints the values of all the tree nodes in the tree in post-order. Does nothing if there is no tree. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classavl__tree.html#a524ae6ac5d7f7c2399fb758aba84af80">printInOrder()</a> </dd>
+<p>Prints the values of all the tree nodes in the tree in post-order. Does nothing if there is no tree. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>output stream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classavl__tree.html#ac7f553c3883b66f7758a71697bae5118">printInOrder()</a> </dd>
 <dd>
-<a class="el" href="classavl__tree.html#ac17fa1e4aa2f0f4b609a7b72c34bd2f6">printPreOrder()</a> </dd></dl>
+<a class="el" href="classavl__tree.html#a789673966eca817f4efbf6bf17644c80">printPreOrder()</a> </dd></dl>
 
 </div>
 </div>
-<a id="ac17fa1e4aa2f0f4b609a7b72c34bd2f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac17fa1e4aa2f0f4b609a7b72c34bd2f6">&#9670;&nbsp;</a></span>printPreOrder()</h2>
+<a id="a789673966eca817f4efbf6bf17644c80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a789673966eca817f4efbf6bf17644c80">&#9670;&nbsp;</a></span>printPreOrder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,7 +271,8 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classavl__tree.html">avl_tree</a>&lt; T &gt;::printPreOrder </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -267,14 +282,20 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Prints the values of all the tree nodes in the tree in pre-order. Does nothing if there is no tree. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classavl__tree.html#a524ae6ac5d7f7c2399fb758aba84af80">printInOrder()</a> </dd>
+<p>Prints the values of all the tree nodes in the tree in pre-order. Does nothing if there is no tree. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>output stream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classavl__tree.html#ac7f553c3883b66f7758a71697bae5118">printInOrder()</a> </dd>
 <dd>
-<a class="el" href="classavl__tree.html#a5fb83061648947aeb6b540a5dee7ae13">printPostOrder()</a> </dd></dl>
+<a class="el" href="classavl__tree.html#a982fc15291d6a645964a9e7743383004">printPostOrder()</a> </dd></dl>
 
 </div>
 </div>
-<a id="ae067ad48ed35e1df18fdda1ed83c3d79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae067ad48ed35e1df18fdda1ed83c3d79">&#9670;&nbsp;</a></span>printTree()</h2>
+<a id="aedc1c7577f8239f7b5ac939b6291fadd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc1c7577f8239f7b5ac939b6291fadd">&#9670;&nbsp;</a></span>printTree()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,7 +308,8 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classavl__tree.html">avl_tree</a>&lt; T &gt;::printTree </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -297,16 +319,16 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Calls root-&gt;<a class="el" href="classavl__tree.html#ae067ad48ed35e1df18fdda1ed83c3d79">printTree()</a> if root exists. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classavl__tree.html#a524ae6ac5d7f7c2399fb758aba84af80">printInOrder()</a> </dd>
+<p>Calls root-&gt;<a class="el" href="classavl__tree.html#aedc1c7577f8239f7b5ac939b6291fadd">printTree()</a> if root exists. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="classavl__tree.html#ac7f553c3883b66f7758a71697bae5118">printInOrder()</a> </dd>
 <dd>
-<a class="el" href="classavl__tree.html#ac17fa1e4aa2f0f4b609a7b72c34bd2f6">printPreOrder()</a> </dd>
+<a class="el" href="classavl__tree.html#a789673966eca817f4efbf6bf17644c80">printPreOrder()</a> </dd>
 <dd>
-<a class="el" href="classavl__tree.html#a5fb83061648947aeb6b540a5dee7ae13">printPostOrder()</a> </dd></dl>
+<a class="el" href="classavl__tree.html#a982fc15291d6a645964a9e7743383004">printPostOrder()</a> </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="avl__tree_8h_source.html">avl_tree.h</a></li>
+<li>include/<a class="el" href="avl__tree_8h_source.html">avl_tree.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

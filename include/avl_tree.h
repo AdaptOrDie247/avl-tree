@@ -2,6 +2,7 @@
 #ifndef AVL_TREE_H
 #define AVL_TREE_H
 
+#include <iostream>
 #include <memory>
 #include "tree_node.h"
 #include <utility>
@@ -48,26 +49,35 @@ class avl_tree {
         /**
          * Prints the values of all the tree nodes in the tree in in-order.
          * Does nothing if there is no tree.
+         * @param output output stream
          * @see printPreOrder()
          * @see printPostOrder()
          */
-        void printInOrder() const { if (root) root->printTreeInOrder(); }
+        void printInOrder(ostream& output) const {
+            if (root) root->printTreeInOrder(output);
+        }
         
         /**
          * Prints the values of all the tree nodes in the tree in pre-order.
          * Does nothing if there is no tree.
+         * @param output output stream
          * @see printInOrder()
          * @see printPostOrder()
          */
-        void printPreOrder() const { if (root) root->printTreePreOrder(); }
+        void printPreOrder(ostream& output) const {
+            if (root) root->printTreePreOrder(output);
+        }
         
         /**
          * Prints the values of all the tree nodes in the tree in post-order.
          * Does nothing if there is no tree.
+         * @param output output stream
          * @see printInOrder()
          * @see printPreOrder()
          */
-        void printPostOrder() const { if (root) root->printTreePostOrder(); }
+        void printPostOrder(ostream& output) const {
+            if (root) root->printTreePostOrder(output);
+        }
         
         /**
          * Calls root->printTree() if root exists.
@@ -75,7 +85,7 @@ class avl_tree {
          * @see printPreOrder()
          * @see printPostOrder()
          */
-        void printTree() { if (root) root->printTree(); }
+        void printTree(ostream& output) { if (root) root->printTree(output); }
         
         /**
          * Inserts a tree node into the tree with key key.

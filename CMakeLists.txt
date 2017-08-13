@@ -33,10 +33,15 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
   include_directories("${gtest_SOURCE_DIR}/include")
 endif()
 
-# Now simply link against gtest or gtest_main as needed. Eg
+# Now simply link against gtest or gtest_main as needed.
+
 add_executable(tree_node_unittest test/tree_node_unittest.cpp)
 target_link_libraries(tree_node_unittest gtest_main)
 add_test(NAME tree_node_unittest COMMAND tree_node_unittest)
+
+add_executable(avl_tree_unittest test/avl_tree_unittest.cpp)
+target_link_libraries(avl_tree_unittest gtest_main)
+add_test(NAME avl_tree_unittest COMMAND avl_tree_unittest)
 
 # Build main program
 add_executable(demo src/demo.cpp)

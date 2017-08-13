@@ -113,35 +113,39 @@ class tree_node {
         /**
          * Prints the values of all the tree nodes in the tree rooted at the
          * tree node in in-order.
+         * @param output output stream
          * @see printTreePreOrder()
          * @see printTreePostOrder()
          */
-        void printTreeInOrder();
+        void printTreeInOrder(ostream& output);
         
         /**
          * Prints the values of all the tree nodes in the tree rooted at the
          * tree node in pre-order.
+         * @param output output stream
          * @see printTreeInOrder()
          * @see printTreePostOrder()
          */
-        void printTreePreOrder();
+        void printTreePreOrder(ostream& output);
         
         /**
          * Prints the values of all the tree nodes in the tree rooted at the
          * tree node in post-order.
+         * @param output output stream
          * @see printTreeInOrder()
          * @see printTreePreOrder()
          */
-        void printTreePostOrder();
+        void printTreePostOrder(ostream& output);
         
         /**
          * Prints a visual representation of the tree.
+         * @param output output stream
          * @param depth the depth of the tree node which defaults to 0
          * @see printTreeInOrder()
          * @see printTreePreOrder()
          * @see printTreePostOrder()
          */
-        void printTree(int depth = 0);
+        void printTree(ostream& output, int depth = 0);
         
         /**
          * Returns the first tree node found with key keyP from the tree rooted
@@ -225,31 +229,31 @@ int tree_node<T>::getBalanceFactor() {
 }
 
 template <class T>
-void tree_node<T>::printTreeInOrder() {
-    if (getLeftChild()) getLeftChild()->printTreeInOrder();
-    cout << getKey() << " ";
-    if (getRightChild()) getRightChild()->printTreeInOrder();
+void tree_node<T>::printTreeInOrder(ostream& output) {
+    if (getLeftChild()) getLeftChild()->printTreeInOrder(output);
+    output << getKey() << " ";
+    if (getRightChild()) getRightChild()->printTreeInOrder(output);
 }
 
 template <class T>
-void tree_node<T>::printTreePreOrder() {
-    cout << getKey() << " ";
-    if (getLeftChild()) getLeftChild()->printTreePreOrder();
-    if (getRightChild()) getRightChild()->printTreePreOrder();
+void tree_node<T>::printTreePreOrder(ostream& output) {
+    output << getKey() << " ";
+    if (getLeftChild()) getLeftChild()->printTreePreOrder(output);
+    if (getRightChild()) getRightChild()->printTreePreOrder(output);
 }
 
 template <class T>
-void tree_node<T>::printTreePostOrder() {
-    if (getLeftChild()) getLeftChild()->printTreePostOrder();
-    if (getRightChild()) getRightChild()->printTreePostOrder();
-    cout << getKey() << " ";
+void tree_node<T>::printTreePostOrder(ostream& output) {
+    if (getLeftChild()) getLeftChild()->printTreePostOrder(output);
+    if (getRightChild()) getRightChild()->printTreePostOrder(output);
+    output << getKey() << " ";
 }
 
 template <class T>
-void tree_node<T>::printTree(int depth) {
-    if (getRightChild()) getRightChild()->printTree(depth + 1);
-    cout << string(depth, '\t') << getKey() << endl;
-    if (getLeftChild()) getLeftChild()->printTree(depth + 1);
+void tree_node<T>::printTree(ostream& output, int depth) {
+    if (getRightChild()) getRightChild()->printTree(output, depth + 1);
+    output << string(depth, '\t') << getKey() << endl;
+    if (getLeftChild()) getLeftChild()->printTree(output, depth + 1);
 }
 
 template <class T>
