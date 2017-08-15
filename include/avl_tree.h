@@ -299,13 +299,21 @@ void avl_tree<T>::deleteNodeWithKey(T key) {
         // nodesSuccessorAsReplacementUP is moved with transplant
         auto nodesSuccessorAsReplacement = nodesSuccessorAsReplacementUP.get();
         bool nodesSuccessorIsRightChild = true;
-        if (nodesSuccessor->getParent() != node) {
+        // In case nodesSuccessor has no right child
+        if (nodesSuccessorsParent != node) {
             nodesSuccessorIsRightChild = false;
             transplantSubTree(nodesSuccessor, nodesSuccessor->getRightChild());
             nodesSuccessorAsReplacement->
                 setRightChild(move(node->getRightChild()));
             nodesSuccessorAsReplacement->getRightChild()->
                 setParent(nodesSuccessorAsReplacement);
+        } else {
+            nodesSuccessorAsReplacement->
+                setRightChild(move(nodesSuccessor->getRightChild()));
+            if (nodesSuccessorAsReplacement->getRightChild()) {
+                nodesSuccessorAsReplacement->getRightChild()->
+                    setParent(nodesSuccessorAsReplacement);
+            }
         }
         auto nodesLeftChildUP = move(node->getLeftChild());
         transplantSubTree(node, nodesSuccessorAsReplacementUP);
