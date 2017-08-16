@@ -189,30 +189,30 @@ void avl_tree<T>::insertNodeWithKey(T key) {
 
 template <class T>
 void avl_tree<T>::balance(tree_node<T>* subRoot) {
-    // left-heavy
+    // Left heavy
     if (subRoot->getBalanceFactor() < -1) {
-        // left-right heavy
+        // Left-right heavy
         if (subRoot->getLeftChild()->getBalanceFactor() > 0) {
-            // left rotation around child
+            // Left rotation around child
             rotateLeft(subRoot->getLeftChild().get());
-            // right rotation around subroot
+            // Right rotation around subroot
             rotateRight(subRoot);
-        // left-heavy or left-left-heavy
+        // Left heavy or left-left heavy
         } else {
-            // right rotation around subroot
+            // Right rotation around subroot
             rotateRight(subRoot);
         }
-    // right-heavy
+    // Right heavy
     } else if (subRoot->getBalanceFactor() > 1) {
-        // right-left heavy
+        // Right-left heavy
         if (subRoot->getRightChild()->getBalanceFactor() < 0) {
-            // right rotation around child
+            // Right rotation around child
             rotateRight(subRoot->getRightChild().get());
-            // left rotation around subroot
+            // Left rotation around subroot
             rotateLeft(subRoot);
-        // right-heavy or right-right-heavy
+        // Right heavy or right-right heavy
         } else {
-            // left rotation around subroot
+            // Left rotation around subroot
             rotateLeft(subRoot);
         }
     }
@@ -224,22 +224,23 @@ void avl_tree<T>::rotateRight(tree_node<T>* pivot) {
     pivot->setLeftChild(move(temp->getRightChild()));
     if (pivot->getLeftChild()) pivot->getLeftChild()->setParent(pivot);
     pivot->setHeightFromChildren();
+    // Get parent of pivot before pivot is moved
     auto parentOfPivot = pivot->getParent();
-    // if the pivot is the root
+    // If the pivot is the root
     if (!parentOfPivot) {
         temp->setRightChild(move(root));
         temp->getRightChild()->setParent(temp.get());
         temp->setHeightFromChildren();
         root = move(temp);
         root->setParent(nullptr);
-    // if the pivot is the left child of its parent
+    // If the pivot is the left child of its parent
     } else if (parentOfPivot->getLeftChild().get() == pivot) {
         temp->setRightChild(move(parentOfPivot->getLeftChild()));
         temp->getRightChild()->setParent(temp.get());
         temp->setHeightFromChildren();
         parentOfPivot->setLeftChild(move(temp));
         parentOfPivot->getLeftChild()->setParent(parentOfPivot);
-    // if the pivot is the right child of its parent
+    // If the pivot is the right child of its parent
     } else {
         temp->setRightChild(move(parentOfPivot->getRightChild()));
         temp->getRightChild()->setParent(temp.get());
@@ -255,22 +256,23 @@ void avl_tree<T>::rotateLeft(tree_node<T>* pivot) {
     pivot->setRightChild(move(temp->getLeftChild()));
     if (pivot->getRightChild()) pivot->getRightChild()->setParent(pivot);
     pivot->setHeightFromChildren();
+    // Get parent of pivot before pivot is moved
     auto parentOfPivot = pivot->getParent();
-    // if the pivot is the root
+    // If the pivot is the root
     if (!parentOfPivot) {
         temp->setLeftChild(move(root));
         temp->getLeftChild()->setParent(temp.get());
         temp->setHeightFromChildren();
         root = move(temp);
         root->setParent(nullptr);
-    // if the pivot is the left child of its parent
+    // If the pivot is the left child of its parent
     } else if (parentOfPivot->getLeftChild().get() == pivot) {
         temp->setLeftChild(move(parentOfPivot->getLeftChild()));
         temp->getLeftChild()->setParent(temp.get());
         temp->setHeightFromChildren();
         parentOfPivot->setLeftChild(move(temp));
         parentOfPivot->getLeftChild()->setParent(parentOfPivot);
-    // if the pivot is the right child of its parent
+    // If the pivot is the right child of its parent
     } else {
         temp->setLeftChild(move(parentOfPivot->getRightChild()));
         temp->getLeftChild()->setParent(temp.get());
@@ -310,11 +312,13 @@ void avl_tree<T>::deleteNodeWithKey(T key) {
         // Get nodesSuccessorsParent raw pointer before nodesSuccessor is
         // replaced by its right child being transplanted
         auto nodesSuccessorsParent = nodesSuccessor->getParent();
+        // Create a new node to replace deleted node with
         auto nodesSuccessorAsReplacementUP =
             make_unique<tree_node<T>>(nodesSuccessor->getKey());
         // Get nodesSuccessorAsReplacement raw pointer before
         // nodesSuccessorAsReplacementUP is moved with transplant
         auto nodesSuccessorAsReplacement = nodesSuccessorAsReplacementUP.get();
+        // Needed for updating heights and rebalancing
         bool nodesSuccessorIsRightChild = true;
         // In case nodesSuccessor has no right child
         if (nodesSuccessorsParent != node) {
