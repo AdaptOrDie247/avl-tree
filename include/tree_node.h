@@ -22,7 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <iostream>
 #include <memory>
 #include <utility>
-using namespace std;
 
 /**
  * A tree node class.
@@ -33,7 +32,7 @@ class tree_node {
     private:
         T key; /**< key. */
         tree_node<T>* parent; /**< parent. */
-        unique_ptr<tree_node<T>>
+        std::unique_ptr<tree_node<T>>
             leftChild, /**< left child. */
             rightChild; /**< right child. */
         int height; /**< height. */
@@ -73,7 +72,7 @@ class tree_node {
          * @see getRightChild()
          * @see setRightChild()
          */
-        void setLeftChild(unique_ptr<tree_node<T>> leftChildP) {
+        void setLeftChild(std::unique_ptr<tree_node<T>> leftChildP) {
             leftChild = move(leftChildP);
         }
         
@@ -84,7 +83,7 @@ class tree_node {
          * @see getLeftChild()
          * @see setLeftChild()
          */
-        void setRightChild(unique_ptr<tree_node<T>> rightChildP) {
+        void setRightChild(std::unique_ptr<tree_node<T>> rightChildP) {
             rightChild = move(rightChildP);
         }
         
@@ -96,7 +95,7 @@ class tree_node {
          * @see setRightChild()
          * @see getRightChild()
          */
-        unique_ptr<tree_node<T>>& getLeftChild() { return leftChild; }
+        std::unique_ptr<tree_node<T>>& getLeftChild() { return leftChild; }
         
         /**
          * Returns the right child.
@@ -106,7 +105,7 @@ class tree_node {
          * @see setLeftChild()
          * @see getLeftChild()
          */
-        unique_ptr<tree_node<T>>& getRightChild() { return rightChild; }
+        std::unique_ptr<tree_node<T>>& getRightChild() { return rightChild; }
         
         /**
          * Sets the height based upon the heights of the children.
@@ -134,7 +133,7 @@ class tree_node {
          * @see printTreePreOrder()
          * @see printTreePostOrder()
          */
-        void printTreeInOrder(ostream& output);
+        void printTreeInOrder(std::ostream& output);
         
         /**
          * Prints the values of all the tree nodes in the tree rooted at the
@@ -143,7 +142,7 @@ class tree_node {
          * @see printTreeInOrder()
          * @see printTreePostOrder()
          */
-        void printTreePreOrder(ostream& output);
+        void printTreePreOrder(std::ostream& output);
         
         /**
          * Prints the values of all the tree nodes in the tree rooted at the
@@ -152,7 +151,7 @@ class tree_node {
          * @see printTreeInOrder()
          * @see printTreePreOrder()
          */
-        void printTreePostOrder(ostream& output);
+        void printTreePostOrder(std::ostream& output);
         
         /**
          * Prints a visual representation of the tree.
@@ -162,7 +161,7 @@ class tree_node {
          * @see printTreePreOrder()
          * @see printTreePostOrder()
          */
-        void printTree(ostream& output, int depth = 0);
+        void printTree(std::ostream& output, int depth = 0);
         
         /**
          * Returns the first tree node found with key keyP from the tree rooted
@@ -246,30 +245,30 @@ int tree_node<T>::getBalanceFactor() {
 }
 
 template <class T>
-void tree_node<T>::printTreeInOrder(ostream& output) {
+void tree_node<T>::printTreeInOrder(std::ostream& output) {
     if (getLeftChild()) getLeftChild()->printTreeInOrder(output);
     output << getKey() << " ";
     if (getRightChild()) getRightChild()->printTreeInOrder(output);
 }
 
 template <class T>
-void tree_node<T>::printTreePreOrder(ostream& output) {
+void tree_node<T>::printTreePreOrder(std::ostream& output) {
     output << getKey() << " ";
     if (getLeftChild()) getLeftChild()->printTreePreOrder(output);
     if (getRightChild()) getRightChild()->printTreePreOrder(output);
 }
 
 template <class T>
-void tree_node<T>::printTreePostOrder(ostream& output) {
+void tree_node<T>::printTreePostOrder(std::ostream& output) {
     if (getLeftChild()) getLeftChild()->printTreePostOrder(output);
     if (getRightChild()) getRightChild()->printTreePostOrder(output);
     output << getKey() << " ";
 }
 
 template <class T>
-void tree_node<T>::printTree(ostream& output, int depth) {
+void tree_node<T>::printTree(std::ostream& output, int depth) {
     if (getRightChild()) getRightChild()->printTree(output, depth + 1);
-    output << string(depth, '\t') << getKey() << endl;
+    output << std::string(depth, '\t') << getKey() << std::endl;
     if (getLeftChild()) getLeftChild()->printTree(output, depth + 1);
 }
 

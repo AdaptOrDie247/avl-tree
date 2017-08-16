@@ -25,12 +25,12 @@ TEST(insertNodeWithKeyTest, LeftLeftHeavyCase1) {
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(0);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t2\n") +
-        string("1\n") +
-        string("\t0\n");
+    std::string expectedOutput = 
+        std::string("\t2\n") +
+        std::string("1\n") +
+        std::string("\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node2 = avlt.getNodeWithKey(2);
     auto node1 = avlt.getNodeWithKey(1);
@@ -53,15 +53,15 @@ TEST(insertNodeWithKeyTest, LeftLeftHeavyCase2) {
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(3);
     avlt.insertNodeWithKey(0);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t\t5\n") +
-        string("\t4\n") +
-        string("\t\t3\n") +
-        string("2\n") +
-        string("\t1\n") +
-        string("\t\t0\n");
+    std::string expectedOutput = 
+        std::string("\t\t5\n") +
+        std::string("\t4\n") +
+        std::string("\t\t3\n") +
+        std::string("2\n") +
+        std::string("\t1\n") +
+        std::string("\t\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node5 = avlt.getNodeWithKey(5);
     auto node4 = avlt.getNodeWithKey(4);
@@ -90,12 +90,12 @@ TEST(insertNodeWithKeyTest, LeftRightHeavyCase1) {
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(1);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t2\n") +
-        string("1\n") +
-        string("\t0\n");
+    std::string expectedOutput = 
+        std::string("\t2\n") +
+        std::string("1\n") +
+        std::string("\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node2 = avlt.getNodeWithKey(2);
     auto node1 = avlt.getNodeWithKey(1);
@@ -118,15 +118,15 @@ TEST(insertNodeWithKeyTest, LeftRightHeavyCase2) {
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(3);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t\t5\n") +
-        string("\t4\n") +
-        string("\t\t3\n") +
-        string("2\n") +
-        string("\t1\n") +
-        string("\t\t0\n");
+    std::string expectedOutput = 
+        std::string("\t\t5\n") +
+        std::string("\t4\n") +
+        std::string("\t\t3\n") +
+        std::string("2\n") +
+        std::string("\t1\n") +
+        std::string("\t\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node5 = avlt.getNodeWithKey(5);
     auto node4 = avlt.getNodeWithKey(4);
@@ -155,12 +155,12 @@ TEST(insertNodeWithKeyTest, RightRightHeavyCase1) {
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(2);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t2\n") +
-        string("1\n") +
-        string("\t0\n");
+    std::string expectedOutput = 
+        std::string("\t2\n") +
+        std::string("1\n") +
+        std::string("\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node2 = avlt.getNodeWithKey(2);
     auto node1 = avlt.getNodeWithKey(1);
@@ -183,15 +183,15 @@ TEST(insertNodeWithKeyTest, RightRightHeavyCase2) {
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(4);
     avlt.insertNodeWithKey(5);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t\t5\n") +
-        string("\t4\n") +
-        string("3\n") +
-        string("\t\t2\n") +
-        string("\t1\n") +
-        string("\t\t0\n");
+    std::string expectedOutput = 
+        std::string("\t\t5\n") +
+        std::string("\t4\n") +
+        std::string("3\n") +
+        std::string("\t\t2\n") +
+        std::string("\t1\n") +
+        std::string("\t\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node5 = avlt.getNodeWithKey(5);
     auto node4 = avlt.getNodeWithKey(4);
@@ -220,12 +220,12 @@ TEST(insertNodeWithKeyTest, RightLeftHeavyCase1) {
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(1);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t2\n") +
-        string("1\n") +
-        string("\t0\n");
+    std::string expectedOutput = 
+        std::string("\t2\n") +
+        std::string("1\n") +
+        std::string("\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node2 = avlt.getNodeWithKey(2);
     auto node1 = avlt.getNodeWithKey(1);
@@ -248,15 +248,15 @@ TEST(insertNodeWithKeyTest, RightLeftHeavyCase2) {
     avlt.insertNodeWithKey(3);
     avlt.insertNodeWithKey(5);
     avlt.insertNodeWithKey(2);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t\t5\n") +
-        string("\t4\n") +
-        string("3\n") +
-        string("\t\t2\n") +
-        string("\t1\n") +
-        string("\t\t0\n");
+    std::string expectedOutput = 
+        std::string("\t\t5\n") +
+        std::string("\t4\n") +
+        std::string("3\n") +
+        std::string("\t\t2\n") +
+        std::string("\t1\n") +
+        std::string("\t\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node5 = avlt.getNodeWithKey(5);
     auto node4 = avlt.getNodeWithKey(4);
@@ -290,15 +290,15 @@ TEST(deleteNodeWithKeyTest, RightChildWithOnlyRightChild) {
     avlt.insertNodeWithKey(6);
     avlt.insertNodeWithKey(0);
     avlt.deleteNodeWithKey(5);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t\t6\n") +
-        string("\t4\n") +
-        string("\t\t3\n") +
-        string("2\n") +
-        string("\t1\n") +
-        string("\t\t0\n");
+    std::string expectedOutput = 
+        std::string("\t\t6\n") +
+        std::string("\t4\n") +
+        std::string("\t\t3\n") +
+        std::string("2\n") +
+        std::string("\t1\n") +
+        std::string("\t\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node6 = avlt.getNodeWithKey(6);
     auto node4 = avlt.getNodeWithKey(4);
@@ -332,15 +332,15 @@ TEST(deleteNodeWithKeyTest, LeftChildWithOnlyLeftChild) {
     avlt.insertNodeWithKey(5);
     avlt.insertNodeWithKey(6);
     avlt.deleteNodeWithKey(1);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t\t6\n") +
-        string("\t5\n") +
-        string("4\n") +
-        string("\t\t3\n") +
-        string("\t2\n") +
-        string("\t\t0\n");
+    std::string expectedOutput = 
+        std::string("\t\t6\n") +
+        std::string("\t5\n") +
+        std::string("4\n") +
+        std::string("\t\t3\n") +
+        std::string("\t2\n") +
+        std::string("\t\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node6 = avlt.getNodeWithKey(6);
     auto node5 = avlt.getNodeWithKey(5);
@@ -372,13 +372,13 @@ TEST(deleteNodeWithKeyTest, RightChildWithNoChildren) {
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(2);
     avlt.deleteNodeWithKey(4);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t3\n") +
-        string("\t\t2\n") +
-        string("1\n") +
-        string("\t0\n");
+    std::string expectedOutput = 
+        std::string("\t3\n") +
+        std::string("\t\t2\n") +
+        std::string("1\n") +
+        std::string("\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node3 = avlt.getNodeWithKey(3);
     auto node2 = avlt.getNodeWithKey(2);
@@ -404,13 +404,13 @@ TEST(deleteNodeWithKeyTest, LeftChildWithNoChildrenCase1) {
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(4);
     avlt.deleteNodeWithKey(0);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t4\n") +
-        string("3\n") +
-        string("\t\t2\n") +
-        string("\t1\n");
+    std::string expectedOutput = 
+        std::string("\t4\n") +
+        std::string("3\n") +
+        std::string("\t\t2\n") +
+        std::string("\t1\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node4 = avlt.getNodeWithKey(4);
     auto node3 = avlt.getNodeWithKey(3);
@@ -439,16 +439,16 @@ TEST(deleteNodeWithKeyTest, LeftChildWithNoChildrenCase2) {
     avlt.insertNodeWithKey(5);
     avlt.insertNodeWithKey(7);
     avlt.deleteNodeWithKey(0);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t\t7\n") +
-        string("\t6\n") +
-        string("\t\t5\n") +
-        string("4\n") +
-        string("\t\t3\n") +
-        string("\t2\n") +
-        string("\t\t1\n");
+    std::string expectedOutput = 
+        std::string("\t\t7\n") +
+        std::string("\t6\n") +
+        std::string("\t\t5\n") +
+        std::string("4\n") +
+        std::string("\t\t3\n") +
+        std::string("\t2\n") +
+        std::string("\t\t1\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node7 = avlt.getNodeWithKey(7);
     auto node6 = avlt.getNodeWithKey(6);
@@ -486,16 +486,16 @@ TEST(deleteNodeWithKeyTest, WithBothChildrenWhereSuccessorIsRightChildCase1) {
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(4);
     avlt.deleteNodeWithKey(5);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t\t7\n") +
-        string("\t6\n") +
-        string("\t\t\t4\n") +
-        string("\t\t3\n") +
-        string("2\n") +
-        string("\t1\n") +
-        string("\t\t0\n");
+    std::string expectedOutput = 
+        std::string("\t\t7\n") +
+        std::string("\t6\n") +
+        std::string("\t\t\t4\n") +
+        std::string("\t\t3\n") +
+        std::string("2\n") +
+        std::string("\t1\n") +
+        std::string("\t\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node7 = avlt.getNodeWithKey(7);
     auto node6 = avlt.getNodeWithKey(6);
@@ -530,13 +530,13 @@ TEST(deleteNodeWithKeyTest, WithBothChildrenWhereSuccessorIsRightChildCase2) {
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(2);
     avlt.deleteNodeWithKey(3);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t4\n") +
-        string("\t\t2\n") +
-        string("1\n") +
-        string("\t0\n");
+    std::string expectedOutput = 
+        std::string("\t4\n") +
+        std::string("\t\t2\n") +
+        std::string("1\n") +
+        std::string("\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node4 = avlt.getNodeWithKey(4);
     auto node2 = avlt.getNodeWithKey(2);
@@ -570,21 +570,21 @@ TEST(deleteNodeWithKeyTest, WithBothChildrenCase1) {
     avlt.insertNodeWithKey(11);
     avlt.insertNodeWithKey(12);
     avlt.deleteNodeWithKey(5);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t\t\t12\n") +
-        string("\t\t11\n") +
-        string("\t10\n") +
-        string("\t\t\t9\n") +
-        string("\t\t8\n") +
-        string("\t\t\t7\n") +
-        string("6\n") +
-        string("\t\t\t4\n") +
-        string("\t\t3\n") +
-        string("\t2\n") +
-        string("\t\t1\n") +
-        string("\t\t\t0\n");
+    std::string expectedOutput = 
+        std::string("\t\t\t12\n") +
+        std::string("\t\t11\n") +
+        std::string("\t10\n") +
+        std::string("\t\t\t9\n") +
+        std::string("\t\t8\n") +
+        std::string("\t\t\t7\n") +
+        std::string("6\n") +
+        std::string("\t\t\t4\n") +
+        std::string("\t\t3\n") +
+        std::string("\t2\n") +
+        std::string("\t\t1\n") +
+        std::string("\t\t\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node12 = avlt.getNodeWithKey(12);
     auto node11 = avlt.getNodeWithKey(11);
@@ -637,16 +637,16 @@ TEST(deleteNodeWithKeyTest, WithBothChildrenCase2) {
     avlt.insertNodeWithKey(5);
     avlt.insertNodeWithKey(7);
     avlt.deleteNodeWithKey(2);
-    stringstream ss;
+    std::stringstream ss;
     avlt.printTree(ss);
-    string expectedOutput = 
-        string("\t\t7\n") +
-        string("\t6\n") +
-        string("\t\t\t5\n") +
-        string("\t\t4\n") +
-        string("3\n") +
-        string("\t1\n") +
-        string("\t\t0\n");
+    std::string expectedOutput = 
+        std::string("\t\t7\n") +
+        std::string("\t6\n") +
+        std::string("\t\t\t5\n") +
+        std::string("\t\t4\n") +
+        std::string("3\n") +
+        std::string("\t1\n") +
+        std::string("\t\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
     auto node7 = avlt.getNodeWithKey(7);
     auto node6 = avlt.getNodeWithKey(6);

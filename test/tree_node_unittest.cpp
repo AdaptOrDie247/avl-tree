@@ -23,13 +23,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class TreeNodeTest : public ::testing::Test {
     protected:
         virtual void SetUp() {
-            node3 = make_unique<tree_node<int>>(3);
-            node1 = make_unique<tree_node<int>>(1);
-            node5 = make_unique<tree_node<int>>(5);
-            node0 = make_unique<tree_node<int>>(0);
-            node2 = make_unique<tree_node<int>>(2);
-            node4 = make_unique<tree_node<int>>(4);
-            node6 = make_unique<tree_node<int>>(6);
+            node3 = std::make_unique<tree_node<int>>(3);
+            node1 = std::make_unique<tree_node<int>>(1);
+            node5 = std::make_unique<tree_node<int>>(5);
+            node0 = std::make_unique<tree_node<int>>(0);
+            node2 = std::make_unique<tree_node<int>>(2);
+            node4 = std::make_unique<tree_node<int>>(4);
+            node6 = std::make_unique<tree_node<int>>(6);
             node0->setParent(node1.get());
             node2->setParent(node1.get());
             node1->setLeftChild(move(node0));
@@ -44,26 +44,26 @@ class TreeNodeTest : public ::testing::Test {
             node3->setRightChild(move(node5));
             node3->setParent(nullptr);
         }
-        unique_ptr<tree_node<int>> node3;
-        unique_ptr<tree_node<int>> node1;
-        unique_ptr<tree_node<int>> node5;
-        unique_ptr<tree_node<int>> node0;
-        unique_ptr<tree_node<int>> node2;
-        unique_ptr<tree_node<int>> node4;
-        unique_ptr<tree_node<int>> node6;
+        std::unique_ptr<tree_node<int>> node3;
+        std::unique_ptr<tree_node<int>> node1;
+        std::unique_ptr<tree_node<int>> node5;
+        std::unique_ptr<tree_node<int>> node0;
+        std::unique_ptr<tree_node<int>> node2;
+        std::unique_ptr<tree_node<int>> node4;
+        std::unique_ptr<tree_node<int>> node6;
 };
 
 TEST_F(TreeNodeTest, printTree) {
-    stringstream ss;
+    std::stringstream ss;
     node3->printTree(ss);
-    string expectedOutput = 
-        string("\t\t6\n") +
-        string("\t5\n") +
-        string("\t\t4\n") +
-        string("3\n") +
-        string("\t\t2\n") +
-        string("\t1\n") +
-        string("\t\t0\n");
+    std::string expectedOutput = 
+        std::string("\t\t6\n") +
+        std::string("\t5\n") +
+        std::string("\t\t4\n") +
+        std::string("3\n") +
+        std::string("\t\t2\n") +
+        std::string("\t1\n") +
+        std::string("\t\t0\n");
     EXPECT_EQ(ss.str(), expectedOutput);
 }
 

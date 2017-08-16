@@ -23,7 +23,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <memory>
 #include "tree_node.h"
 #include <utility>
-using namespace std;
 
 /**
  * An AVL tree class.
@@ -32,7 +31,7 @@ using namespace std;
 template <class T>
 class avl_tree {
     private:
-        unique_ptr<tree_node<T>> root; /**< root. */
+        std::unique_ptr<tree_node<T>> root; /**< root. */
         
         /**
          * Replaces subtree rooted at rootToReplace with subtree rooted at
@@ -42,7 +41,7 @@ class avl_tree {
          * @param newRootUPR the root of the subtree to replace with
          */
         void transplantSubTree(tree_node<T>* rootToReplace,
-                               unique_ptr<tree_node<T>>& newRootUPR);
+                               std::unique_ptr<tree_node<T>>& newRootUPR);
         
         /**
          * Balance the subtree rooted at subRoot.
@@ -70,7 +69,7 @@ class avl_tree {
          * @see printPreOrder()
          * @see printPostOrder()
          */
-        void printInOrder(ostream& output) const {
+        void printInOrder(std::ostream& output) const {
             if (root) root->printTreeInOrder(output);
         }
         
@@ -81,7 +80,7 @@ class avl_tree {
          * @see printInOrder()
          * @see printPostOrder()
          */
-        void printPreOrder(ostream& output) const {
+        void printPreOrder(std::ostream& output) const {
             if (root) root->printTreePreOrder(output);
         }
         
@@ -92,7 +91,7 @@ class avl_tree {
          * @see printInOrder()
          * @see printPreOrder()
          */
-        void printPostOrder(ostream& output) const {
+        void printPostOrder(std::ostream& output) const {
             if (root) root->printTreePostOrder(output);
         }
         
@@ -102,7 +101,7 @@ class avl_tree {
          * @see printPreOrder()
          * @see printPostOrder()
          */
-        void printTree(ostream& output) { if (root) root->printTree(output); }
+        void printTree(std::ostream& output) { if (root) root->printTree(output); }
         
         /**
          * Inserts a tree node into the tree with key key.
@@ -139,7 +138,7 @@ class avl_tree {
 
 template <class T>
 void avl_tree<T>::transplantSubTree
-    (tree_node<T>* rootToReplace, unique_ptr<tree_node<T>>& newRootUPR) {
+    (tree_node<T>* rootToReplace, std::unique_ptr<tree_node<T>>& newRootUPR) {
     auto newRoot = newRootUPR.get();
     auto parentOfRootToReplace = rootToReplace->getParent();
     if (!parentOfRootToReplace) {
@@ -155,7 +154,7 @@ void avl_tree<T>::transplantSubTree
 
 template <class T>
 void avl_tree<T>::insertNodeWithKey(T key) {
-    auto newNode = make_unique<tree_node<T>>(key);
+    auto newNode = std::make_unique<tree_node<T>>(key);
     tree_node<T>* parentOfNewNode = nullptr;
     auto currentNode = root.get();
     while (currentNode) {
@@ -314,7 +313,7 @@ void avl_tree<T>::deleteNodeWithKey(T key) {
         auto nodesSuccessorsParent = nodesSuccessor->getParent();
         // Create a new node to replace deleted node with
         auto nodesSuccessorAsReplacementUP =
-            make_unique<tree_node<T>>(nodesSuccessor->getKey());
+            std::make_unique<tree_node<T>>(nodesSuccessor->getKey());
         // Get nodesSuccessorAsReplacement raw pointer before
         // nodesSuccessorAsReplacementUP is moved with transplant
         auto nodesSuccessorAsReplacement = nodesSuccessorAsReplacementUP.get();
