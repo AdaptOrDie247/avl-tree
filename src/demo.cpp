@@ -1,72 +1,68 @@
 #include "../include/avl_tree.h"
 #include <iostream>
-#include <sstream>
-#include "../include/tree_node.h"
 using namespace std;
 
+void insertNode(avl_tree<int>&);
+void deleteNode(avl_tree<int>&);
+
 /**
- * Driver program for avl_tree class.
+ * Demo program for avl_tree class using avl_tree<int>.
  * Author: Daniel Gilbert
  * @return an int
  */
 int main() {
-//    // Test insertNode
-//    avl_tree<int> avlt;
-//    avlt.insertNodeWithKey(6);
-//    avlt.insertNodeWithKey(4);
-//    avlt.insertNodeWithKey(9);
-//    avlt.insertNodeWithKey(1);
-//    avlt.insertNodeWithKey(5);
-//    avlt.insertNodeWithKey(8);
-//    avlt.insertNodeWithKey(10);
-//    avlt.insertNodeWithKey(0);
-//    avlt.insertNodeWithKey(3);
-//    avlt.insertNodeWithKey(7);
-//    avlt.insertNodeWithKey(11);
-//    avlt.insertNodeWithKey(2);
-//    avlt.printTree();
-//    // Test deleteNode with both children where successor is right child
-//    avl_tree<int> avlt;
-//    avlt.insertNodeWithKey(10);
-//    avlt.insertNodeWithKey(6);
-//    avlt.insertNodeWithKey(13);
-//    avlt.insertNodeWithKey(4);
-//    avlt.insertNodeWithKey(8);
-//    avlt.insertNodeWithKey(12);
-//    avlt.insertNodeWithKey(14);
-//    avlt.insertNodeWithKey(2);
-//    avlt.insertNodeWithKey(5);
-//    avlt.insertNodeWithKey(7);
-//    avlt.insertNodeWithKey(9);
-//    avlt.insertNodeWithKey(11);
-//    avlt.insertNodeWithKey(1);
-//    avlt.insertNodeWithKey(3);
-//    avlt.deleteNodeWithKey(13);
-//    avlt.printTree();
-    // Test deleteNode with both children where successor is not right child
-//    avl_tree<int> avlt;
-//    avlt.insertNodeWithKey(13);
-//    avlt.insertNodeWithKey(5);
-//    avlt.insertNodeWithKey(18);
-//    avlt.insertNodeWithKey(2);
-//    avlt.insertNodeWithKey(8);
-//    avlt.insertNodeWithKey(16);
-//    avlt.insertNodeWithKey(20);
-//    avlt.insertNodeWithKey(0);
-//    avlt.insertNodeWithKey(3);
-//    avlt.insertNodeWithKey(7);
-//    avlt.insertNodeWithKey(10);
-//    avlt.insertNodeWithKey(14);
-//    avlt.insertNodeWithKey(17);
-//    avlt.insertNodeWithKey(21);
-//    avlt.insertNodeWithKey(-1);
-//    avlt.insertNodeWithKey(1);
-//    avlt.insertNodeWithKey(4);
-//    avlt.insertNodeWithKey(6);
-//    avlt.insertNodeWithKey(11);
-//    avlt.insertNodeWithKey(15);
-//    avlt.insertNodeWithKey(-2);
-//    avlt.deleteNodeWithKey(13);
-//    avlt.printTree();
+    avl_tree<int> avlt;
+    bool run = true;
+    do {
+        cout << "Demo program for avl_tree class using avl_tree<int>.\n"
+                "Author: Daniel Gilbert\n"
+                "1. Insert Node\n"
+                "2. Delete Node\n"
+                "3. Print Tree\n"
+                "4. Print Tree In Order\n"
+                "5. Print Tree Pre Order\n"
+                "6. Print Tree Post Order\n"
+                "7. Exit\n"
+                "Please make a selection, e.g. 1: ";
+        int selection;
+        cin >> selection;
+        switch (selection) {
+            case 1:
+                insertNode(avlt);
+                break;
+            case 2:
+                deleteNode(avlt);
+                break;
+            case 3:
+                avlt.printTree(cout);
+                break;
+            case 4:
+                avlt.printInOrder(cout); cout << endl;
+                break;
+            case 5:
+                avlt.printPreOrder(cout); cout << endl;
+                break;
+            case 6:
+                avlt.printPostOrder(cout); cout << endl;
+                break;
+            case 7:
+                run = false;
+                break;
+        }
+    } while (run);
     return 0;
+}
+
+void insertNode(avl_tree<int>& avlt) {
+    cout << "Please enter an int for the node's key, e.g. 1: ";
+    int key;
+    cin >> key;
+    avlt.insertNodeWithKey(key);
+}
+
+void deleteNode(avl_tree<int>& avlt) {
+    cout << "Please enter an int for the node's key, e.g. 1: ";
+    int key;
+    cin >> key;
+    avlt.deleteNodeWithKey(key);
 }
