@@ -23,13 +23,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class TreeNodeTest : public ::testing::Test {
     protected:
         virtual void SetUp() {
-            node3 = std::make_unique<tree_node<int>>(3);
-            node1 = std::make_unique<tree_node<int>>(1);
-            node5 = std::make_unique<tree_node<int>>(5);
-            node0 = std::make_unique<tree_node<int>>(0);
-            node2 = std::make_unique<tree_node<int>>(2);
-            node4 = std::make_unique<tree_node<int>>(4);
-            node6 = std::make_unique<tree_node<int>>(6);
+            node3 = std::make_unique<avl::tree_node<int>>(3);
+            node1 = std::make_unique<avl::tree_node<int>>(1);
+            node5 = std::make_unique<avl::tree_node<int>>(5);
+            node0 = std::make_unique<avl::tree_node<int>>(0);
+            node2 = std::make_unique<avl::tree_node<int>>(2);
+            node4 = std::make_unique<avl::tree_node<int>>(4);
+            node6 = std::make_unique<avl::tree_node<int>>(6);
             node0->setParent(node1.get());
             node2->setParent(node1.get());
             node1->setLeftChild(move(node0));
@@ -44,13 +44,13 @@ class TreeNodeTest : public ::testing::Test {
             node3->setRightChild(move(node5));
             node3->setParent(nullptr);
         }
-        std::unique_ptr<tree_node<int>> node3;
-        std::unique_ptr<tree_node<int>> node1;
-        std::unique_ptr<tree_node<int>> node5;
-        std::unique_ptr<tree_node<int>> node0;
-        std::unique_ptr<tree_node<int>> node2;
-        std::unique_ptr<tree_node<int>> node4;
-        std::unique_ptr<tree_node<int>> node6;
+        std::unique_ptr<avl::tree_node<int>> node3;
+        std::unique_ptr<avl::tree_node<int>> node1;
+        std::unique_ptr<avl::tree_node<int>> node5;
+        std::unique_ptr<avl::tree_node<int>> node0;
+        std::unique_ptr<avl::tree_node<int>> node2;
+        std::unique_ptr<avl::tree_node<int>> node4;
+        std::unique_ptr<avl::tree_node<int>> node6;
 };
 
 TEST_F(TreeNodeTest, printTree) {

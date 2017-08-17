@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <sstream>
 
 TEST(insertNodeWithKeyTest, LeftLeftHeavyCase1) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(0);
@@ -46,7 +46,7 @@ TEST(insertNodeWithKeyTest, LeftLeftHeavyCase1) {
 }
 
 TEST(insertNodeWithKeyTest, LeftLeftHeavyCase2) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(4);
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(5);
@@ -86,7 +86,7 @@ TEST(insertNodeWithKeyTest, LeftLeftHeavyCase2) {
 }
 
 TEST(insertNodeWithKeyTest, LeftRightHeavyCase1) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(1);
@@ -111,7 +111,7 @@ TEST(insertNodeWithKeyTest, LeftRightHeavyCase1) {
 }
 
 TEST(insertNodeWithKeyTest, LeftRightHeavyCase2) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(4);
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(5);
@@ -151,7 +151,7 @@ TEST(insertNodeWithKeyTest, LeftRightHeavyCase2) {
 }
 
 TEST(insertNodeWithKeyTest, RightRightHeavyCase1) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(2);
@@ -176,7 +176,7 @@ TEST(insertNodeWithKeyTest, RightRightHeavyCase1) {
 }
 
 TEST(insertNodeWithKeyTest, RightRightHeavyCase2) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(3);
@@ -216,7 +216,7 @@ TEST(insertNodeWithKeyTest, RightRightHeavyCase2) {
 }
 
 TEST(insertNodeWithKeyTest, RightLeftHeavyCase1) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(1);
@@ -241,7 +241,7 @@ TEST(insertNodeWithKeyTest, RightLeftHeavyCase1) {
 }
 
 TEST(insertNodeWithKeyTest, RightLeftHeavyCase2) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(4);
@@ -281,7 +281,7 @@ TEST(insertNodeWithKeyTest, RightLeftHeavyCase2) {
 }
 
 TEST(deleteNodeWithKeyTest, RightChildWithOnlyRightChild) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(4);
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(5);
@@ -323,7 +323,7 @@ TEST(deleteNodeWithKeyTest, RightChildWithOnlyRightChild) {
 }
 
 TEST(deleteNodeWithKeyTest, LeftChildWithOnlyLeftChild) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(4);
@@ -365,7 +365,7 @@ TEST(deleteNodeWithKeyTest, LeftChildWithOnlyLeftChild) {
 }
 
 TEST(deleteNodeWithKeyTest, RightChildWithNoChildren) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(3);
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(4);
@@ -397,7 +397,7 @@ TEST(deleteNodeWithKeyTest, RightChildWithNoChildren) {
 }
 
 TEST(deleteNodeWithKeyTest, LeftChildWithNoChildrenCase1) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(0);
     avlt.insertNodeWithKey(3);
@@ -429,7 +429,7 @@ TEST(deleteNodeWithKeyTest, LeftChildWithNoChildrenCase1) {
 }
 
 TEST(deleteNodeWithKeyTest, LeftChildWithNoChildrenCase2) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(4);
@@ -476,7 +476,7 @@ TEST(deleteNodeWithKeyTest, LeftChildWithNoChildrenCase2) {
 }
 
 TEST(deleteNodeWithKeyTest, WithBothChildrenWhereSuccessorIsRightChildCase1) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(5);
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(6);
@@ -523,7 +523,7 @@ TEST(deleteNodeWithKeyTest, WithBothChildrenWhereSuccessorIsRightChildCase1) {
 }
 
 TEST(deleteNodeWithKeyTest, WithBothChildrenWhereSuccessorIsRightChildCase2) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(3);
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(4);
@@ -555,7 +555,7 @@ TEST(deleteNodeWithKeyTest, WithBothChildrenWhereSuccessorIsRightChildCase2) {
 }
 
 TEST(deleteNodeWithKeyTest, WithBothChildrenCase1) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(5);
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(8);
@@ -627,7 +627,7 @@ TEST(deleteNodeWithKeyTest, WithBothChildrenCase1) {
 }
 
 TEST(deleteNodeWithKeyTest, WithBothChildrenCase2) {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     avlt.insertNodeWithKey(2);
     avlt.insertNodeWithKey(1);
     avlt.insertNodeWithKey(4);

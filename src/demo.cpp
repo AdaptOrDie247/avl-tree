@@ -19,8 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "../include/avl_tree.h"
 #include <iostream>
 
-void insertNode(avl_tree<int>&);
-void deleteNode(avl_tree<int>&);
+void insertNode(avl::avl_tree<int>&);
+void deleteNode(avl::avl_tree<int>&);
 
 /**
  * Demo program for avl_tree class using avl_tree<int>.
@@ -28,7 +28,7 @@ void deleteNode(avl_tree<int>&);
  * @return an int
  */
 int main() {
-    avl_tree<int> avlt;
+    avl::avl_tree<int> avlt;
     bool run = true;
     do {
         std::cout << "Demo program for avl_tree class using avl_tree<int>.\n"
@@ -70,14 +70,14 @@ int main() {
     return 0;
 }
 
-void insertNode(avl_tree<int>& avlt) {
+void insertNode(avl::avl_tree<int>& avlt) {
     std::cout << "Please enter an int for the node's key, e.g. 1: ";
     int key;
     std::cin >> key;
     avlt.insertNodeWithKey(key);
 }
 
-void deleteNode(avl_tree<int>& avlt) {
+void deleteNode(avl::avl_tree<int>& avlt) {
     std::cout << "Please enter an int for the node's key, e.g. 1: ";
     int key;
     std::cin >> key;

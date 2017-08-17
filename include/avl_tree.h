@@ -28,6 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * An AVL tree class.
  * Author: Daniel Gilbert
  */
+namespace avl {
 template <class T>
 class avl_tree {
     private:
@@ -356,6 +357,7 @@ void avl_tree<T>::deleteNodeWithKey(T key) {
             currentNode = currentNode->getParent();
         }
     }
+}
 }
 
 #endif /* AVL_TREE_H */

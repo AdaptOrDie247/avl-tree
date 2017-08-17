@@ -27,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * A tree node class.
  * Author: Daniel Gilbert
  */
+namespace avl {
 template <class T>
 class tree_node {
     private:
@@ -331,6 +332,7 @@ tree_node<T>* tree_node<T>::getSuccessorNode() {
         currentNodesParent = currentNode->getParent();
     }
     return currentNodesParent;
+}
 }
 
 #endif /* TREE_NODE_H */
