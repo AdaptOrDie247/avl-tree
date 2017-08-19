@@ -6,7 +6,7 @@ var searchData=
   ['getleftchild',['getLeftChild',['../classavl_1_1tree__node.html#ad12a5f6a41cfc6203913c5b6bce30837',1,'avl::tree_node']]],
   ['getmaximumnode',['getMaximumNode',['../classavl_1_1tree__node.html#a47e9411fcd44d4ea5b8403e1ae757060',1,'avl::tree_node']]],
   ['getminimumnode',['getMinimumNode',['../classavl_1_1tree__node.html#af2a04b44c2d9abfab772dcf61143df35',1,'avl::tree_node']]],
-  ['getnodewithkey',['getNodeWithKey',['../classavl_1_1avl__tree.html#a8f339dfd42be061603851f8d0850f239',1,'avl::avl_tree::getNodeWithKey()'],['../classavl_1_1tree__node.html#ae69bc500ca4e3d5d7a4ffab75edf16dc',1,'avl::tree_node::getNodeWithKey()']]],
+  ['getnodewithkey',['getNodeWithKey',['../classavl_1_1avl__tree.html#a8f339dfd42be061603851f8d0850f239',1,'avl::avl_tree::getNodeWithKey()'],['../classavl_1_1tree__node.html#ad8ea20d9c3867f9223510ce5e780b22d',1,'avl::tree_node::getNodeWithKey()']]],
   ['getparent',['getParent',['../classavl_1_1tree__node.html#a3350faeaf03433fc236ffe811b41b04f',1,'avl::tree_node']]],
   ['getpredecessornode',['getPredecessorNode',['../classavl_1_1tree__node.html#af865187e8d61080dd1720a28195a0c1f',1,'avl::tree_node']]],
   ['getrightchild',['getRightChild',['../classavl_1_1tree__node.html#ac79592e64351573e622d0977002fc813',1,'avl::tree_node']]],

@@ -40,10 +40,10 @@ class tree_node {
     public:
         
         /**
-         * Constructs a tree node with key keyP and height 0.
-         * @param keyP the key
+         * Constructs a tree node with key nodesKey and height 0.
+         * @param nodesKey the key
          */
-        tree_node(T keyP) : key(keyP), height(0) {}
+        tree_node(T nodesKey) : key(nodesKey), height(0) {}
         
         /**
          * Returns the key.
@@ -53,10 +53,10 @@ class tree_node {
         
         /**
          * Sets the parent.
-         * @param parentP the parent
+         * @param nodesParent the parent
          * @see getParent()
          */
-        void setParent(tree_node<T>* parentP) { parent = parentP; }
+        void setParent(tree_node<T>* nodesParent) { parent = nodesParent; }
         
         /**
          * Returns the parent.
@@ -68,24 +68,24 @@ class tree_node {
         
         /**
          * Sets the left child.
-         * @param leftChildP the left child
+         * @param nodesLeftChild the left child
          * @see getLeftChild()
          * @see getRightChild()
          * @see setRightChild()
          */
-        void setLeftChild(std::unique_ptr<tree_node<T>> leftChildP) {
-            leftChild = move(leftChildP);
+        void setLeftChild(std::unique_ptr<tree_node<T>> nodesLeftChild) {
+            leftChild = move(nodesLeftChild);
         }
         
         /**
          * Sets the right child.
-         * @param rightChildP the right child
+         * @param nodesRightChild the right child
          * @see getRightChild()
          * @see getLeftChild()
          * @see setLeftChild()
          */
-        void setRightChild(std::unique_ptr<tree_node<T>> rightChildP) {
-            rightChild = move(rightChildP);
+        void setRightChild(std::unique_ptr<tree_node<T>> nodesRightChild) {
+            rightChild = move(nodesRightChild);
         }
         
         /**
@@ -165,15 +165,15 @@ class tree_node {
         void printTree(std::ostream& output, int depth = 0);
         
         /**
-         * Returns the first tree node found with key keyP from the tree rooted
-         * at the tree node.
-         * Returns nullptr if a tree node with key keyP does not exist in the
-         * tree rooted at the tree node.
-         * @param keyP the key of the tree node to search for
-         * @return the first tree node found with key keyP, or nullptr if such a
-         * tree node does not exist
+         * Returns the first tree node found with key nodesKey from the tree
+         * rooted at the tree node.
+         * Returns nullptr if a tree node with key nodesKey does not exist in
+         * the tree rooted at the tree node.
+         * @param nodesKey the key of the tree node to search for
+         * @return the first tree node found with key nodesKey, or nullptr if
+         * such a tree node does not exist
          */
-        tree_node<T>* getNodeWithKey(T keyP);
+        tree_node<T>* getNodeWithKey(T nodesKey);
         
         /**
          * Returns the minimum tree node from the tree rooted at the tree node.
@@ -274,10 +274,10 @@ void tree_node<T>::printTree(std::ostream& output, int depth) {
 }
 
 template <class T>
-tree_node<T>* tree_node<T>::getNodeWithKey(T keyP) {
+tree_node<T>* tree_node<T>::getNodeWithKey(T nodesKey) {
     auto currentNode = this;
-    while (currentNode && keyP != currentNode->getKey()) {
-        if (keyP < currentNode->getKey()) {
+    while (currentNode && nodesKey != currentNode->getKey()) {
+        if (nodesKey < currentNode->getKey()) {
             currentNode = currentNode->getLeftChild().get();
         } else {
             currentNode = currentNode->getRightChild().get();

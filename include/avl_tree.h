@@ -102,7 +102,9 @@ class avl_tree {
          * @see printPreOrder()
          * @see printPostOrder()
          */
-        void printTree(std::ostream& output) { if (root) root->printTree(output); }
+        void printTree(std::ostream& output) {
+            if (root) root->printTree(output);
+        }
         
         /**
          * Inserts a tree node into the tree with key key.

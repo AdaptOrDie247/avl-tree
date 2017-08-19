@@ -3,17 +3,17 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classavl_1_1tree__node_a7aec358a8e5c453e686c29b1d63c7437}{tree\+\_\+node} (T keyP)
+\hyperlink{classavl_1_1tree__node_a90f0d579eefbadcb32cb84bb798f1030}{tree\+\_\+node} (T nodes\+Key)
 \item 
 T \hyperlink{classavl_1_1tree__node_a27d17e38312d380b79da420bbc0da99d}{get\+Key} ()
 \item 
-void \hyperlink{classavl_1_1tree__node_a9b62ceb3999608be2e85569208668b08}{set\+Parent} (\hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$parentP)
+void \hyperlink{classavl_1_1tree__node_abd5de5986ecb86e8a07b007a51d8cbec}{set\+Parent} (\hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$nodes\+Parent)
 \item 
 \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$ \hyperlink{classavl_1_1tree__node_a3350faeaf03433fc236ffe811b41b04f}{get\+Parent} () const
 \item 
-void \hyperlink{classavl_1_1tree__node_a21990bf288cf0ec0572e53afbacb9b35}{set\+Left\+Child} (std\+::unique\+\_\+ptr$<$ \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$$>$ left\+ChildP)
+void \hyperlink{classavl_1_1tree__node_acb0fbbc7cca1f2b18e72fb728be23979}{set\+Left\+Child} (std\+::unique\+\_\+ptr$<$ \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$$>$ nodes\+Left\+Child)
 \item 
-void \hyperlink{classavl_1_1tree__node_a09a51bcee333bbd509e3edb96179ae7e}{set\+Right\+Child} (std\+::unique\+\_\+ptr$<$ \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$$>$ right\+ChildP)
+void \hyperlink{classavl_1_1tree__node_a8b36f21d28a09858e32ba9f1b349994f}{set\+Right\+Child} (std\+::unique\+\_\+ptr$<$ \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$$>$ nodes\+Right\+Child)
 \item 
 std\+::unique\+\_\+ptr$<$ \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $>$ \& \hyperlink{classavl_1_1tree__node_ad12a5f6a41cfc6203913c5b6bce30837}{get\+Left\+Child} ()
 \item 
@@ -33,7 +33,7 @@ void \hyperlink{classavl_1_1tree__node_adb0751fd04db456d5afdbe5c898da41c}{print\
 \item 
 void \hyperlink{classavl_1_1tree__node_a3aabce32e81215733da2f6fff33a4809}{print\+Tree} (std\+::ostream \&output, int depth=0)
 \item 
-\hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$ \hyperlink{classavl_1_1tree__node_ae69bc500ca4e3d5d7a4ffab75edf16dc}{get\+Node\+With\+Key} (T keyP)
+\hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$ \hyperlink{classavl_1_1tree__node_ad8ea20d9c3867f9223510ce5e780b22d}{get\+Node\+With\+Key} (T nodes\+Key)
 \item 
 \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$ \hyperlink{classavl_1_1tree__node_af2a04b44c2d9abfab772dcf61143df35}{get\+Minimum\+Node} ()
 \item 
@@ -46,16 +46,16 @@ void \hyperlink{classavl_1_1tree__node_a3aabce32e81215733da2f6fff33a4809}{print\
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classavl_1_1tree__node_a7aec358a8e5c453e686c29b1d63c7437}\label{classavl_1_1tree__node_a7aec358a8e5c453e686c29b1d63c7437}} 
+\mbox{\Hypertarget{classavl_1_1tree__node_a90f0d579eefbadcb32cb84bb798f1030}\label{classavl_1_1tree__node_a90f0d579eefbadcb32cb84bb798f1030}} 
 \index{avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}!tree\+\_\+node@{tree\+\_\+node}}
 \index{tree\+\_\+node@{tree\+\_\+node}!avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}}
 \subsubsection{\texorpdfstring{tree\+\_\+node()}{tree\_node()}}
 {\footnotesize\ttfamily template$<$class T$>$ \\
-\hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::\hyperlink{classavl_1_1tree__node}{tree\+\_\+node} (\begin{DoxyParamCaption}\item[{T}]{keyP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::\hyperlink{classavl_1_1tree__node}{tree\+\_\+node} (\begin{DoxyParamCaption}\item[{T}]{nodes\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Constructs a tree node with key keyP and height 0. 
+Constructs a tree node with key nodes\+Key and height 0. 
 \begin{DoxyParams}{Parameters}
-{\em keyP} & the key \\
+{\em nodes\+Key} & the key \\
 \hline
 \end{DoxyParams}
 
@@ -105,9 +105,9 @@ Returns the left child. Returns nullptr if there is no left child. \begin{DoxyRe
 the left child or nullptr if there is no left child 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classavl_1_1tree__node_a21990bf288cf0ec0572e53afbacb9b35}{set\+Left\+Child()} 
+\hyperlink{classavl_1_1tree__node_acb0fbbc7cca1f2b18e72fb728be23979}{set\+Left\+Child()} 
 
-\hyperlink{classavl_1_1tree__node_a09a51bcee333bbd509e3edb96179ae7e}{set\+Right\+Child()} 
+\hyperlink{classavl_1_1tree__node_a8b36f21d28a09858e32ba9f1b349994f}{set\+Right\+Child()} 
 
 \hyperlink{classavl_1_1tree__node_ac79592e64351573e622d0977002fc813}{get\+Right\+Child()} 
 \end{DoxySeeAlso}
@@ -137,20 +137,20 @@ the minimum tree node from the tree rooted at the tree node
 \begin{DoxySeeAlso}{See also}
 \hyperlink{classavl_1_1tree__node_a47e9411fcd44d4ea5b8403e1ae757060}{get\+Maximum\+Node()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classavl_1_1tree__node_ae69bc500ca4e3d5d7a4ffab75edf16dc}\label{classavl_1_1tree__node_ae69bc500ca4e3d5d7a4ffab75edf16dc}} 
+\mbox{\Hypertarget{classavl_1_1tree__node_ad8ea20d9c3867f9223510ce5e780b22d}\label{classavl_1_1tree__node_ad8ea20d9c3867f9223510ce5e780b22d}} 
 \index{avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}!get\+Node\+With\+Key@{get\+Node\+With\+Key}}
 \index{get\+Node\+With\+Key@{get\+Node\+With\+Key}!avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}}
 \subsubsection{\texorpdfstring{get\+Node\+With\+Key()}{getNodeWithKey()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$ \hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::get\+Node\+With\+Key (\begin{DoxyParamCaption}\item[{T}]{keyP }\end{DoxyParamCaption})}
+\hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$ \hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::get\+Node\+With\+Key (\begin{DoxyParamCaption}\item[{T}]{nodes\+Key }\end{DoxyParamCaption})}
 
-Returns the first tree node found with key keyP from the tree rooted at the tree node. Returns nullptr if a tree node with key keyP does not exist in the tree rooted at the tree node. 
+Returns the first tree node found with key nodes\+Key from the tree rooted at the tree node. Returns nullptr if a tree node with key nodes\+Key does not exist in the tree rooted at the tree node. 
 \begin{DoxyParams}{Parameters}
-{\em keyP} & the key of the tree node to search for \\
+{\em nodes\+Key} & the key of the tree node to search for \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-the first tree node found with key keyP, or nullptr if such a tree node does not exist 
+the first tree node found with key nodes\+Key, or nullptr if such a tree node does not exist 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classavl_1_1tree__node_a3350faeaf03433fc236ffe811b41b04f}\label{classavl_1_1tree__node_a3350faeaf03433fc236ffe811b41b04f}} 
 \index{avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}!get\+Parent@{get\+Parent}}
@@ -163,7 +163,7 @@ Returns the parent. Returns nullptr if there is no parent. \begin{DoxyReturn}{Re
 the parent or nullptr if there is no parent 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classavl_1_1tree__node_a9b62ceb3999608be2e85569208668b08}{set\+Parent()} 
+\hyperlink{classavl_1_1tree__node_abd5de5986ecb86e8a07b007a51d8cbec}{set\+Parent()} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classavl_1_1tree__node_af865187e8d61080dd1720a28195a0c1f}\label{classavl_1_1tree__node_af865187e8d61080dd1720a28195a0c1f}} 
 \index{avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}!get\+Predecessor\+Node@{get\+Predecessor\+Node}}
@@ -189,9 +189,9 @@ Returns the right child. Returns nullptr if there is no right child. \begin{Doxy
 the right child or nullptr if there is no right child 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\hyperlink{classavl_1_1tree__node_a09a51bcee333bbd509e3edb96179ae7e}{set\+Right\+Child()} 
+\hyperlink{classavl_1_1tree__node_a8b36f21d28a09858e32ba9f1b349994f}{set\+Right\+Child()} 
 
-\hyperlink{classavl_1_1tree__node_a21990bf288cf0ec0572e53afbacb9b35}{set\+Left\+Child()} 
+\hyperlink{classavl_1_1tree__node_acb0fbbc7cca1f2b18e72fb728be23979}{set\+Left\+Child()} 
 
 \hyperlink{classavl_1_1tree__node_ad12a5f6a41cfc6203913c5b6bce30837}{get\+Left\+Child()} 
 \end{DoxySeeAlso}
@@ -290,16 +290,16 @@ void \hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::set\+
 Sets the height based upon the heights of the children. \begin{DoxySeeAlso}{See also}
 \hyperlink{classavl_1_1tree__node_ab298d8df03ff6414ff7280bbdbb16e8a}{get\+Height()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classavl_1_1tree__node_a21990bf288cf0ec0572e53afbacb9b35}\label{classavl_1_1tree__node_a21990bf288cf0ec0572e53afbacb9b35}} 
+\mbox{\Hypertarget{classavl_1_1tree__node_acb0fbbc7cca1f2b18e72fb728be23979}\label{classavl_1_1tree__node_acb0fbbc7cca1f2b18e72fb728be23979}} 
 \index{avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}!set\+Left\+Child@{set\+Left\+Child}}
 \index{set\+Left\+Child@{set\+Left\+Child}!avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}}
 \subsubsection{\texorpdfstring{set\+Left\+Child()}{setLeftChild()}}
 {\footnotesize\ttfamily template$<$class T$>$ \\
-void \hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::set\+Left\+Child (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$$>$}]{left\+ChildP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::set\+Left\+Child (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$$>$}]{nodes\+Left\+Child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Sets the left child. 
 \begin{DoxyParams}{Parameters}
-{\em left\+ChildP} & the left child \\
+{\em nodes\+Left\+Child} & the left child \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
@@ -307,33 +307,33 @@ Sets the left child.
 
 \hyperlink{classavl_1_1tree__node_ac79592e64351573e622d0977002fc813}{get\+Right\+Child()} 
 
-\hyperlink{classavl_1_1tree__node_a09a51bcee333bbd509e3edb96179ae7e}{set\+Right\+Child()} 
+\hyperlink{classavl_1_1tree__node_a8b36f21d28a09858e32ba9f1b349994f}{set\+Right\+Child()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classavl_1_1tree__node_a9b62ceb3999608be2e85569208668b08}\label{classavl_1_1tree__node_a9b62ceb3999608be2e85569208668b08}} 
+\mbox{\Hypertarget{classavl_1_1tree__node_abd5de5986ecb86e8a07b007a51d8cbec}\label{classavl_1_1tree__node_abd5de5986ecb86e8a07b007a51d8cbec}} 
 \index{avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}!set\+Parent@{set\+Parent}}
 \index{set\+Parent@{set\+Parent}!avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}}
 \subsubsection{\texorpdfstring{set\+Parent()}{setParent()}}
 {\footnotesize\ttfamily template$<$class T$>$ \\
-void \hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::set\+Parent (\begin{DoxyParamCaption}\item[{\hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$}]{parentP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::set\+Parent (\begin{DoxyParamCaption}\item[{\hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$}]{nodes\+Parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Sets the parent. 
 \begin{DoxyParams}{Parameters}
-{\em parentP} & the parent \\
+{\em nodes\+Parent} & the parent \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
 \hyperlink{classavl_1_1tree__node_a3350faeaf03433fc236ffe811b41b04f}{get\+Parent()} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{classavl_1_1tree__node_a09a51bcee333bbd509e3edb96179ae7e}\label{classavl_1_1tree__node_a09a51bcee333bbd509e3edb96179ae7e}} 
+\mbox{\Hypertarget{classavl_1_1tree__node_a8b36f21d28a09858e32ba9f1b349994f}\label{classavl_1_1tree__node_a8b36f21d28a09858e32ba9f1b349994f}} 
 \index{avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}!set\+Right\+Child@{set\+Right\+Child}}
 \index{set\+Right\+Child@{set\+Right\+Child}!avl\+::tree\+\_\+node@{avl\+::tree\+\_\+node}}
 \subsubsection{\texorpdfstring{set\+Right\+Child()}{setRightChild()}}
 {\footnotesize\ttfamily template$<$class T$>$ \\
-void \hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::set\+Right\+Child (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$$>$}]{right\+ChildP }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void \hyperlink{classavl_1_1tree__node}{avl\+::tree\+\_\+node}$<$ T $>$\+::set\+Right\+Child (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$$>$}]{nodes\+Right\+Child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Sets the right child. 
 \begin{DoxyParams}{Parameters}
-{\em right\+ChildP} & the right child \\
+{\em nodes\+Right\+Child} & the right child \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
@@ -341,7 +341,7 @@ Sets the right child.
 
 \hyperlink{classavl_1_1tree__node_ad12a5f6a41cfc6203913c5b6bce30837}{get\+Left\+Child()} 
 
-\hyperlink{classavl_1_1tree__node_a21990bf288cf0ec0572e53afbacb9b35}{set\+Left\+Child()} 
+\hyperlink{classavl_1_1tree__node_acb0fbbc7cca1f2b18e72fb728be23979}{set\+Left\+Child()} 
 \end{DoxySeeAlso}
 
 
