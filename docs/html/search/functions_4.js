@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['setheightfromchildren',['setHeightFromChildren',['../classtree__node.html#ab83ce531535bd54bdee8fd3ee9e4c128',1,'tree_node']]],
-  ['setleftchild',['setLeftChild',['../classtree__node.html#a3db979969a0fe8505ba65c7afabb5463',1,'tree_node']]],
-  ['setparent',['setParent',['../classtree__node.html#a1fe75baae3a5d9caa9cb886c54c291e2',1,'tree_node']]],
-  ['setrightchild',['setRightChild',['../classtree__node.html#afea4c6595dafba65b5c4e59ca3da30f3',1,'tree_node']]]
+  ['setheightfromchildren',['setHeightFromChildren',['../classavl_1_1tree__node.html#a5e3b8788433571c4b8462d2cf2d689b9',1,'avl::tree_node']]],
+  ['setleftchild',['setLeftChild',['../classavl_1_1tree__node.html#a21990bf288cf0ec0572e53afbacb9b35',1,'avl::tree_node']]],
+  ['setparent',['setParent',['../classavl_1_1tree__node.html#a9b62ceb3999608be2e85569208668b08',1,'avl::tree_node']]],
+  ['setrightchild',['setRightChild',['../classavl_1_1tree__node.html#a09a51bcee333bbd509e3edb96179ae7e',1,'avl::tree_node']]]
 ];

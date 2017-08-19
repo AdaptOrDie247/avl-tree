@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['insertnodewithkey',['insertNodeWithKey',['../classavl__tree.html#afece250225096dba051bd467e89b3657',1,'avl_tree']]]
+  ['insertnodewithkey',['insertNodeWithKey',['../classavl_1_1avl__tree.html#a4dc43dd761b83f560e7017f1d14f06da',1,'avl::avl_tree']]]
 ];

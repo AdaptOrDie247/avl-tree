@@ -39,10 +39,10 @@ class avl_tree {
          * newRoot.
          * rootToReplace must be a tree node that exists in the tree.
          * @param rootToReplace the root of the subtree to replace
-         * @param newRootUPR the root of the subtree to replace with
+         * @param tempNewRoot the root of the subtree to replace with
          */
         void transplantSubTree(tree_node<T>* rootToReplace,
-                               std::unique_ptr<tree_node<T>>& newRootUPR);
+                               std::unique_ptr<tree_node<T>>& tempNewRoot);
         
         /**
          * Balance the subtree rooted at subRoot.
@@ -139,16 +139,16 @@ class avl_tree {
 
 template <class T>
 void avl_tree<T>::transplantSubTree
-    (tree_node<T>* rootToReplace, std::unique_ptr<tree_node<T>>& newRootUPR) {
-    auto newRoot = newRootUPR.get();
+    (tree_node<T>* rootToReplace, std::unique_ptr<tree_node<T>>& tempNewRoot) {
+    auto newRoot = tempNewRoot.get();
     auto parentOfRootToReplace = rootToReplace->getParent();
     if (!parentOfRootToReplace) {
-        root = move(newRootUPR);
+        root = move(tempNewRoot);
     } else if (rootToReplace ==
                parentOfRootToReplace->getLeftChild().get()) {
-        parentOfRootToReplace->setLeftChild(move(newRootUPR));
+        parentOfRootToReplace->setLeftChild(move(tempNewRoot));
     } else {
-        parentOfRootToReplace->setRightChild(move(newRootUPR));
+        parentOfRootToReplace->setRightChild(move(tempNewRoot));
     }
     if (newRoot) newRoot->setParent(parentOfRootToReplace);
 }
@@ -313,11 +313,12 @@ void avl_tree<T>::deleteNodeWithKey(T key) {
         // replaced by its right child being transplanted
         auto nodesSuccessorsParent = nodesSuccessor->getParent();
         // Create a new node to replace deleted node with
-        auto nodesSuccessorAsReplacementUP =
+        auto tempNodesSuccessorAsReplacement =
             std::make_unique<tree_node<T>>(nodesSuccessor->getKey());
         // Get nodesSuccessorAsReplacement raw pointer before
-        // nodesSuccessorAsReplacementUP is moved with transplant
-        auto nodesSuccessorAsReplacement = nodesSuccessorAsReplacementUP.get();
+        // tempNodesSuccessorAsReplacement is moved with transplant
+        auto nodesSuccessorAsReplacement = 
+            tempNodesSuccessorAsReplacement.get();
         // Needed for updating heights and rebalancing
         bool nodesSuccessorIsRightChild = true;
         // In case nodesSuccessor has no right child
@@ -336,9 +337,9 @@ void avl_tree<T>::deleteNodeWithKey(T key) {
                     setParent(nodesSuccessorAsReplacement);
             }
         }
-        auto nodesLeftChildUP = move(node->getLeftChild());
-        transplantSubTree(node, nodesSuccessorAsReplacementUP);
-        nodesSuccessorAsReplacement->setLeftChild(move(nodesLeftChildUP));
+        auto tempNodesLeftChild = move(node->getLeftChild());
+        transplantSubTree(node, tempNodesSuccessorAsReplacement);
+        nodesSuccessorAsReplacement->setLeftChild(move(tempNodesLeftChild));
         nodesSuccessorAsReplacement->getLeftChild()->
             setParent(nodesSuccessorAsReplacement);
         tree_node<T>* currentNode;

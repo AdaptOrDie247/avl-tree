@@ -1,0 +1,142 @@
+\hypertarget{classavl_1_1avl__tree}{}\section{avl\+:\+:avl\+\_\+tree$<$ T $>$ Class Template Reference}
+\label{classavl_1_1avl__tree}\index{avl\+::avl\+\_\+tree$<$ T $>$@{avl\+::avl\+\_\+tree$<$ T $>$}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classavl_1_1avl__tree_a335e8aec1bb894fb4140a1a05a77a271}{print\+In\+Order} (std\+::ostream \&output) const
+\item 
+void \hyperlink{classavl_1_1avl__tree_afee4a12bb06b3a9ccdf63ace4201ef41}{print\+Pre\+Order} (std\+::ostream \&output) const
+\item 
+void \hyperlink{classavl_1_1avl__tree_a852ff0f37be72373547888050e92eb4d}{print\+Post\+Order} (std\+::ostream \&output) const
+\item 
+void \hyperlink{classavl_1_1avl__tree_a8d1c8a29e5c0f1a2830e0e35b4a6c4ee}{print\+Tree} (std\+::ostream \&output)
+\item 
+void \hyperlink{classavl_1_1avl__tree_a4dc43dd761b83f560e7017f1d14f06da}{insert\+Node\+With\+Key} (T key)
+\item 
+\hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$ T $>$ $\ast$ \hyperlink{classavl_1_1avl__tree_a8f339dfd42be061603851f8d0850f239}{get\+Node\+With\+Key} (T key)
+\item 
+void \hyperlink{classavl_1_1avl__tree_a4942723c7c1697410809cfb7f1825d7e}{delete\+Node\+With\+Key} (T key)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classavl_1_1avl__tree_a4942723c7c1697410809cfb7f1825d7e}\label{classavl_1_1avl__tree_a4942723c7c1697410809cfb7f1825d7e}} 
+\index{avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}!delete\+Node\+With\+Key@{delete\+Node\+With\+Key}}
+\index{delete\+Node\+With\+Key@{delete\+Node\+With\+Key}!avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{delete\+Node\+With\+Key()}{deleteNodeWithKey()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl_1_1avl__tree}{avl\+::avl\+\_\+tree}$<$ T $>$\+::delete\+Node\+With\+Key (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})}
+
+Deletes the first tree node found with key key. Does nothing if a tree node with key key does not exist. 
+\begin{DoxyParams}{Parameters}
+{\em key} & the key of the tree node to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classavl_1_1avl__tree_a4dc43dd761b83f560e7017f1d14f06da}{insert\+Node\+With\+Key()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl_1_1avl__tree_a8f339dfd42be061603851f8d0850f239}\label{classavl_1_1avl__tree_a8f339dfd42be061603851f8d0850f239}} 
+\index{avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}!get\+Node\+With\+Key@{get\+Node\+With\+Key}}
+\index{get\+Node\+With\+Key@{get\+Node\+With\+Key}!avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{get\+Node\+With\+Key()}{getNodeWithKey()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classavl_1_1tree__node}{tree\+\_\+node}$<$T$>$$\ast$ \hyperlink{classavl_1_1avl__tree}{avl\+::avl\+\_\+tree}$<$ T $>$\+::get\+Node\+With\+Key (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calls root-\/$>$get\+Node\+With\+Key(key). Returns nullptr if the root tree node does not exist. 
+\begin{DoxyParams}{Parameters}
+{\em key} & the key to pass to root-\/$>$get\+Node\+With\+Key(key) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return value from root-\/$>$get\+Node\+With\+Key(key) or nullptr if the root tree node does not exist 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classavl_1_1avl__tree_a4dc43dd761b83f560e7017f1d14f06da}{insert\+Node\+With\+Key()} 
+
+\hyperlink{classavl_1_1avl__tree_a4942723c7c1697410809cfb7f1825d7e}{delete\+Node\+With\+Key()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl_1_1avl__tree_a4dc43dd761b83f560e7017f1d14f06da}\label{classavl_1_1avl__tree_a4dc43dd761b83f560e7017f1d14f06da}} 
+\index{avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}!insert\+Node\+With\+Key@{insert\+Node\+With\+Key}}
+\index{insert\+Node\+With\+Key@{insert\+Node\+With\+Key}!avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{insert\+Node\+With\+Key()}{insertNodeWithKey()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl_1_1avl__tree}{avl\+::avl\+\_\+tree}$<$ T $>$\+::insert\+Node\+With\+Key (\begin{DoxyParamCaption}\item[{T}]{key }\end{DoxyParamCaption})}
+
+Inserts a tree node into the tree with key key. 
+\begin{DoxyParams}{Parameters}
+{\em key} & the key of the tree node to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classavl_1_1avl__tree_a4942723c7c1697410809cfb7f1825d7e}{delete\+Node\+With\+Key()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl_1_1avl__tree_a335e8aec1bb894fb4140a1a05a77a271}\label{classavl_1_1avl__tree_a335e8aec1bb894fb4140a1a05a77a271}} 
+\index{avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}!print\+In\+Order@{print\+In\+Order}}
+\index{print\+In\+Order@{print\+In\+Order}!avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{print\+In\+Order()}{printInOrder()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl_1_1avl__tree}{avl\+::avl\+\_\+tree}$<$ T $>$\+::print\+In\+Order (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{output }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prints the values of all the tree nodes in the tree in in-\/order. Does nothing if there is no tree. 
+\begin{DoxyParams}{Parameters}
+{\em output} & output stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classavl_1_1avl__tree_afee4a12bb06b3a9ccdf63ace4201ef41}{print\+Pre\+Order()} 
+
+\hyperlink{classavl_1_1avl__tree_a852ff0f37be72373547888050e92eb4d}{print\+Post\+Order()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl_1_1avl__tree_a852ff0f37be72373547888050e92eb4d}\label{classavl_1_1avl__tree_a852ff0f37be72373547888050e92eb4d}} 
+\index{avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}!print\+Post\+Order@{print\+Post\+Order}}
+\index{print\+Post\+Order@{print\+Post\+Order}!avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{print\+Post\+Order()}{printPostOrder()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl_1_1avl__tree}{avl\+::avl\+\_\+tree}$<$ T $>$\+::print\+Post\+Order (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{output }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prints the values of all the tree nodes in the tree in post-\/order. Does nothing if there is no tree. 
+\begin{DoxyParams}{Parameters}
+{\em output} & output stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classavl_1_1avl__tree_a335e8aec1bb894fb4140a1a05a77a271}{print\+In\+Order()} 
+
+\hyperlink{classavl_1_1avl__tree_afee4a12bb06b3a9ccdf63ace4201ef41}{print\+Pre\+Order()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl_1_1avl__tree_afee4a12bb06b3a9ccdf63ace4201ef41}\label{classavl_1_1avl__tree_afee4a12bb06b3a9ccdf63ace4201ef41}} 
+\index{avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}!print\+Pre\+Order@{print\+Pre\+Order}}
+\index{print\+Pre\+Order@{print\+Pre\+Order}!avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{print\+Pre\+Order()}{printPreOrder()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl_1_1avl__tree}{avl\+::avl\+\_\+tree}$<$ T $>$\+::print\+Pre\+Order (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{output }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prints the values of all the tree nodes in the tree in pre-\/order. Does nothing if there is no tree. 
+\begin{DoxyParams}{Parameters}
+{\em output} & output stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classavl_1_1avl__tree_a335e8aec1bb894fb4140a1a05a77a271}{print\+In\+Order()} 
+
+\hyperlink{classavl_1_1avl__tree_a852ff0f37be72373547888050e92eb4d}{print\+Post\+Order()} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classavl_1_1avl__tree_a8d1c8a29e5c0f1a2830e0e35b4a6c4ee}\label{classavl_1_1avl__tree_a8d1c8a29e5c0f1a2830e0e35b4a6c4ee}} 
+\index{avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}!print\+Tree@{print\+Tree}}
+\index{print\+Tree@{print\+Tree}!avl\+::avl\+\_\+tree@{avl\+::avl\+\_\+tree}}
+\subsubsection{\texorpdfstring{print\+Tree()}{printTree()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classavl_1_1avl__tree}{avl\+::avl\+\_\+tree}$<$ T $>$\+::print\+Tree (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{output }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calls root-\/$>$\hyperlink{classavl_1_1avl__tree_a8d1c8a29e5c0f1a2830e0e35b4a6c4ee}{print\+Tree()} if root exists. \begin{DoxySeeAlso}{See also}
+\hyperlink{classavl_1_1avl__tree_a335e8aec1bb894fb4140a1a05a77a271}{print\+In\+Order()} 
+
+\hyperlink{classavl_1_1avl__tree_afee4a12bb06b3a9ccdf63ace4201ef41}{print\+Pre\+Order()} 
+
+\hyperlink{classavl_1_1avl__tree_a852ff0f37be72373547888050e92eb4d}{print\+Post\+Order()} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/avl\+\_\+tree.\+h\end{DoxyCompactItemize}

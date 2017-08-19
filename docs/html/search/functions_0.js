@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['deletenodewithkey',['deleteNodeWithKey',['../classavl__tree.html#a2ed74e7f2e93edea90c5867ec127086f',1,'avl_tree']]]
+  ['deletenodewithkey',['deleteNodeWithKey',['../classavl_1_1avl__tree.html#a4942723c7c1697410809cfb7f1825d7e',1,'avl::avl_tree']]]
 ];
