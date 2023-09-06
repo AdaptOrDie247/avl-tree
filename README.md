@@ -1,5 +1,7 @@
 # AVL Tree #
 
+Author: Daniel Gilbert (AdaptOrDie247)
+
 An implementation of an AVL tree that allows inserting, deleting, printing, and sorting nodes with diagrams and unit test cases for every possible operation.
 
 ### Build Instructions for Linux/Cygwin ###
